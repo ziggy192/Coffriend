@@ -1,67 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EventsActivity">
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="540dp">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <include layout="@layout/bottom_app_bar_main" />
 
-            <include
-                android:id="@+id/cardEventHostStatus"
-                layout="@layout/card_event_host_item"
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp" />
-
-            <include
-                android:id="@+id/cardEventHostStatus2"
-                layout="@layout/card_event_host_item"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_below="@id/cardEventHostStatus"
-                android:layout_margin="8dp" />
-            <include
-                layout="@layout/card_event_host_item"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_below="@id/cardEventHostStatus2"
-                android:layout_margin="8dp" />
-
-        </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
-
-
-
-    <android.support.design.bottomappbar.BottomAppBar
-        android:id="@+id/bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:elevation="20dp"
-        android:outlineProvider="bounds"
-        android:outlineSpotShadowColor="@color/colorTextPrimary"
-
-        app:fabAlignmentMode="center"
-        app:fabAttached="true"
-        app:navigationIcon="@drawable/ic_bars" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:backgroundTint="@color/colorPrimaryBrown"
-        app:layout_anchor="@id/bar"
-        app:srcCompat="@drawable/ic_plus" />
-</android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

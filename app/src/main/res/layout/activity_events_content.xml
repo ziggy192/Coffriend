@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <include
+        android:id="@+id/cardEventHostStatus"
+        layout="@layout/card_event_host_item"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp" />
+
+    <include
+        android:id="@+id/cardEventHostStatus2"
+        layout="@layout/card_event_host_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/cardEventHostStatus"
+        android:layout_margin="8dp" />
+
+    <include
+        layout="@layout/card_event_host_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/cardEventHostStatus2"
+        android:layout_margin="8dp" />
+
+
+</RelativeLayout>

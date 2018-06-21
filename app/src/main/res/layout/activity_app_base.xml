@@ -5,14 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EventsActivity">
+    tools:context=".AppBaseActivity">
 
     <android.support.v4.widget.NestedScrollView
 
         android:layout_width="match_parent"
         android:layout_height="540dp">
 
-        <include layout="@layout/activity_events_content" />
+        <FrameLayout
+            android:id="@+id/view_stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
     </android.support.v4.widget.NestedScrollView>
 
 

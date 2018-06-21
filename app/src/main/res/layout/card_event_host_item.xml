@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="@layout/activity_events"
+    app:cardElevation="6dp"
+    app:layout_goneMarginLeft="8dp"
+    app:layout_goneMarginRight="8dp"
+
+    app:contentPadding="8dp"
+    app:cardCornerRadius="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgUserProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/profile"/>
+
+
+
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:text="Eric Bachman"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/txtTagSoccer"
+            android:background="@drawable/tag_rectangle"
+            android:layout_alignLeft="@id/txtUsername"
+            android:layout_below="@id/txtUsername"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" >
+            <TextView
+                android:text="Soccer"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorPrimaryBrown"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/txtTagCoffee"
+            android:background="@drawable/tag_rectangle"
+            android:layout_toEndOf="@id/txtTagSoccer"
+            android:layout_marginStart="5dp"
+            android:layout_below="@id/txtUsername"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" >
+            <TextView
+                android:text="Coffee"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorPrimaryBrown"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="@drawable/tag_rectangle"
+            android:layout_toEndOf="@id/txtTagCoffee"
+            android:layout_marginStart="5dp"
+
+            android:layout_below="@id/txtUsername"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" >
+            <TextView
+                android:text="Daily work"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorPrimaryBrown"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtStatusContent"
+            android:layout_below="@id/imgUserProfile"
+            android:layout_marginTop="16dp"
+            android:text="Tìm bạn cà phê set kèo worldcup phát"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/txtStatusHashtag"
+            android:text="#Worldcupishere #Muaherucro \n#Caphethugian"
+            android:layout_below="@id/txtStatusContent"
+            android:textColor="@color/colorBlueHashtag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imvIconClock"
+            android:layout_below="@id/txtStatusHashtag"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/ic_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_alignStart="@id/txtUsername"
+            android:layout_alignBottom="@id/imvIconClock"
+            android:text="Friday, 25/5 at 8am"
+            android:textColor="@color/colorTextSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/imvIconPeople"
+            android:layout_below="@id/imvIconClock"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_account_multiple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_alignStart="@id/txtUsername"
+            android:layout_alignBottom="@id/imvIconPeople"
+            android:text="3"
+            android:textColor="@color/colorTextSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:id="@+id/imvIconMarker"
+            android:layout_below="@id/imvIconPeople"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/ic_map_marker_alt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_alignStart="@id/txtUsername"
+            android:layout_alignBottom="@id/imvIconMarker"
+            android:text="2km from here"
+            android:textColor="@color/colorTextSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

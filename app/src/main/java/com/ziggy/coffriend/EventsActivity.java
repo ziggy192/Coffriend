@@ -1,8 +1,11 @@
 package com.ziggy.coffriend;
 
+import android.content.Intent;
 import android.support.design.bottomappbar.BottomAppBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 public class EventsActivity extends AppBaseActivity {
 
@@ -14,6 +17,11 @@ public class EventsActivity extends AppBaseActivity {
         bar = findViewById(R.id.bar);
 
         setSupportActionBar(bar);
+    }
+
+    public void gotoDetail(View view){
+        Intent intent = new Intent(EventsActivity.this, HostDetailActivity.class);
+        startActivity(intent);
     }
 
 }

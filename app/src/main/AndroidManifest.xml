@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".UserProfileActivity" />
-        <activity android:name=".AppBaseActivity"></activity>
+        <activity android:name=".AppBaseActivity" />
+        <activity android:name=".HostDetailActivity"></activity>
     </application>
 
 </manifest>

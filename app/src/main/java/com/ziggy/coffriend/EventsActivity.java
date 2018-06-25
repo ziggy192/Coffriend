@@ -17,11 +17,23 @@ public class EventsActivity extends AppBaseActivity {
         bar = findViewById(R.id.bar);
 
         setSupportActionBar(bar);
+
+
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+//        Intent intent = new Intent(this, UserProfileActivity.class);
+//        startActivity(intent);
     }
 
     public void gotoDetail(View view){
         Intent intent = new Intent(EventsActivity.this, HostDetailActivity.class);
         startActivity(intent);
     }
+
 
 }

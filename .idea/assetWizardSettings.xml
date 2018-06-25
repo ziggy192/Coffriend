@@ -20,10 +20,8 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="opacityPercent" value="52" />
-                            <entry key="outputName" value="ic_map_marker_alt" />
-                            <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\luuqu\OneDrive\Desktop\Class Materials\HCI301\Coffriend Resource\map-marker-alt.svg" />
-                            <entry key="width" value="18" />
+                            <entry key="outputName" value="ic_pencil_alt" />
+                            <entry key="sourceFile" value="C:\Users\luuqu\OneDrive\Desktop\Class Materials\HCI301\Coffriend Resource\pencil-alt.svg" />
                           </map>
                         </option>
                       </PersistentState>

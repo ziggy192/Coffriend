@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".AppBaseActivity" />
-        <activity android:name=".HostDetailActivity"></activity>
+        <activity android:name=".HostDetailActivity" />
+        <activity android:name=".HistoryDetailActivity"></activity>
     </application>
 
 </manifest>

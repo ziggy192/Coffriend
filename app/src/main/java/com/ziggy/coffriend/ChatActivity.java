@@ -40,7 +40,6 @@ public class ChatActivity extends AppCompatActivity {
         edt.setText("");
     }
 
-    @SuppressLint("ResourceAsColor")
     private RelativeLayout createMessageBox(String text, boolean isError){
         RelativeLayout layout = new RelativeLayout(this);
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -56,7 +55,7 @@ public class ChatActivity extends AppCompatActivity {
         if(isError){
             tv.setTextColor(Color.RED);
         } else{
-            tv.setTextColor(R.color.colorPrimaryBrown);
+            tv.setTextColor(Color.parseColor("#795548"));
         }
         tv.setTextSize(20);
         tv.setText(text);

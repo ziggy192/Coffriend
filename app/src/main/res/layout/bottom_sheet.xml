@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomSheet"
+    android:orientation="vertical"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clUserProfile"
+            android:padding="@dimen/activity_margin"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:src="@drawable/user"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <TextView
+                android:id="@+id/tvUserName"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="56dp"
+                android:text="Mike User"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tvUserName"
+                app:layout_constraintLeft_toLeftOf="@id/tvUserName"
+                android:text="Software engineer"
+                android:textSize="14sp"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:id="@+id/viewUserProfile"
+            app:layout_constraintTop_toTopOf="@id/clUserProfile"
+            app:layout_constraintBottom_toBottomOf="@id/clUserProfile"
+            android:background="?attr/selectableItemBackground"
+            android:backgroundTint="#FFFFFF"
+            android:backgroundTintMode="src_in"
+            android:onClick="goToUserProfile"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+    </android.support.constraint.ConstraintLayout>
+
+
+
+    <View
+        android:background="@color/colorLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <!--<android.support.design.widget.NavigationView-->
+        <!--android:id="@+id/navigationView"-->
+        <!--app:itemTextColor="@color/colorLightBrown"-->
+        <!--app:itemIconTint="@color/colorLightBrown"-->
+        <!--android:layout_gravity="start"-->
+        <!--app:menu="@menu/bottom_sheet_menu"-->
+        <!---->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listMenu"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

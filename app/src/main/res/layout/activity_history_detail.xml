@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".HistoryDetailActivity">
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,7 +24,13 @@
             android:layout_height="wrap_content" />
         <TextView
             app:layout_constraintTop_toBottomOf="@id/topPanel"
+            android:background="?attr/selectableItemBackground"
+            android:backgroundTint="@android:color/transparent"
             android:text="Chat to all"
+            android:textAllCaps="false"
+            android:clickable="true"
+
+
             android:textColor="@color/colorPrimaryBrown"
             android:textStyle="bold"
             app:layout_constraintRight_toRightOf="parent"

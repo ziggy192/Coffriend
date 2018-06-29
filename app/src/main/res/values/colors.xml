@@ -8,4 +8,5 @@
     <color name="colorBlueHashtag">#03A9F4</color>
     <color name="colorTextPrimary">#DD000000</color>
     <color name="colorTextSecondary">#88000000</color>
+    <color name="colorLine">#55000000</color>
 </resources>

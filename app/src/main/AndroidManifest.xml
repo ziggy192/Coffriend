@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EventsActivity">
+        <activity android:name=".EventsActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,13 +18,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".UserProfileActivity" />
-        <activity android:name=".AppBaseActivity" />
+        <activity android:name=".AppBaseActivity"
+            android:launchMode="singleTop"/>
         <activity android:name=".HostDetailActivity" />
         <activity
             android:name=".ChatListActivity"
             android:theme="@style/BackActionBar" />
         <activity android:name=".ChatActivity"></activity>
         <activity android:name=".HistoryDetailActivity"></activity>
+        <activity android:name=".HistoryListActivity" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.SEARCH" />-->
+            <!--</intent-filter>-->
+        </activity>
     </application>
 
 </manifest>

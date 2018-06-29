@@ -1,32 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
 
-    <include
-        android:id="@+id/cardEventHostStatus"
-        layout="@layout/card_event_host_item"
-
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp" />
+        android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/cardEventHostStatus2"
-        layout="@layout/card_event_host_item"
+        <RelativeLayout
+            android:paddingBottom="68dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/cardEventHostStatus"
+                layout="@layout/card_event_host_item"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="72dp" />
+
+
+            <include
+                android:id="@+id/cardEventHostStatus2"
+                layout="@layout/card_event_host_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardEventHostStatus"
+                android:layout_margin="8dp" />
+
+            <include
+                layout="@layout/card_event_host_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@id/cardEventHostStatus2"
+                android:layout_margin="8dp" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.arlib.floatingsearchview.FloatingSearchView
+        android:id="@+id/floating_search_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cardEventHostStatus"
-        android:layout_margin="8dp" />
-
-    <include
-        layout="@layout/card_event_host_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_below="@id/cardEventHostStatus2"
-        android:layout_margin="8dp" />
-
-
-</RelativeLayout>
+        android:layout_height="match_parent"
+        app:floatingSearch_close_search_on_keyboard_dismiss="true"
+        app:floatingSearch_leftActionMode="showSearch"
+        app:floatingSearch_menu="@menu/search_menu"
+        app:floatingSearch_searchBarMarginLeft="8dp"
+        app:floatingSearch_searchBarMarginRight="8dp"
+        app:floatingSearch_searchBarMarginTop="8dp"
+        app:floatingSearch_searchHint="Search..."
+        app:floatingSearch_showSearchKey="false"
+        app:floatingSearch_suggestionsListAnimDuration="250" />
+</android.support.constraint.ConstraintLayout>

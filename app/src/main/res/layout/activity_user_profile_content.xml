@@ -117,7 +117,7 @@
         </LinearLayout>
 
         <View
-            android:background="#55000000"
+            android:background="@color/colorLine"
             android:layout_width="1dp"
             android:layout_height="85dp" />
         <LinearLayout

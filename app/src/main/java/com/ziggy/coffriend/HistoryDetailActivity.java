@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class HistoryDetailActivity extends AppCompatActivity {
@@ -15,6 +16,7 @@ public class HistoryDetailActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private boolean state;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,19 @@ public class HistoryDetailActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
     }
+
+    public void clickFollow(View view) {
+        if (state){
+            ((Button) this.findViewById(R.id.btnFollow)).setText("Follow");
+        } else {
+            ((Button) this.findViewById(R.id.btnFollow)).setText("Followed");
+        }
+    }
+
+    public void clickBack(View view) {
+        finish();
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
 

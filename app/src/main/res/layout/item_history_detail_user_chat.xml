@@ -6,6 +6,8 @@
     android:paddingRight="16dp"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
+    android:backgroundTint="#FFFFFF"
+    android:background="?attr/selectableItemBackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <de.hdodenhof.circleimageview.CircleImageView
@@ -14,7 +16,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp" />
 
-    
+
     <TextView
         android:text="Eric Bachman"
         app:layout_constraintLeft_toLeftOf="parent"

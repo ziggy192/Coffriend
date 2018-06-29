@@ -19,10 +19,14 @@
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".AppBaseActivity" />
         <activity android:name=".HostDetailActivity" />
+<<<<<<< HEAD
         <activity
             android:name=".ChatListActivity"
             android:theme="@style/BackActionBar" />
         <activity android:name=".ChatActivity"></activity>
+=======
+        <activity android:name=".HistoryDetailActivity"></activity>
+>>>>>>> a74849e5a52091adc89356e812f884170d60ee64
     </application>
 
 </manifest>

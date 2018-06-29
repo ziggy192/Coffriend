@@ -58,7 +58,14 @@
                         </option>
                         <option name="values">
                           <map>
+<<<<<<< HEAD
                             <entry key="outputIconType" value="ACTIONBAR" />
+=======
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="opacityPercent" value="52" />
+                            <entry key="outputName" value="ic_chat_brown" />
+                            <entry key="sourceFile" value="C:\Users\luuqu\OneDrive\Desktop\Class Materials\HCI301\Coffriend Resource\chat.svg" />
+>>>>>>> a74849e5a52091adc89356e812f884170d60ee64
                           </map>
                         </option>
                       </PersistentState>

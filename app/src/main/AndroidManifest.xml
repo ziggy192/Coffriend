@@ -18,7 +18,11 @@
         </activity>
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".AppBaseActivity" />
-        <activity android:name=".HostDetailActivity"></activity>
+        <activity android:name=".HostDetailActivity" />
+        <activity
+            android:name=".ChatListActivity"
+            android:theme="@style/BackActionBar" />
+        <activity android:name=".ChatActivity"></activity>
     </application>
 
 </manifest>

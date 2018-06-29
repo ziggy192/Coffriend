@@ -1,5 +1,6 @@
 package com.ziggy.coffriend;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,12 +19,19 @@ public class HostDetailActivity extends AppCompatActivity {
     public void clickFollow(View view) {
         if (state){
             ((Button) this.findViewById(R.id.btnFollow)).setText("Follow");
+            state = false;
         } else {
             ((Button) this.findViewById(R.id.btnFollow)).setText("Followed");
+            state = true;
         }
     }
 
     public void clickBack(View view) {
-        finish();
+        onBackPressed();
+    }
+
+    public void goToChat(View view) {
+        Intent intent = new Intent(HostDetailActivity.this, ChatListActivity.class);
+        startActivity(intent);
     }
 }

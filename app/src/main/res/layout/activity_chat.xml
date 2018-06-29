@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ChatActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/bg_shadow"
+        android:id="@+id/toolBar"
+        android:padding="3dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="clickBack"
+            android:src="@drawable/ic_back_rectangle" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgUserProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/btnBack"
+            android:src="@drawable/profile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imgUserProfile"
+            android:id="@+id/txtUsername"
+            android:text="Eric Bachman" />
+
+        <RelativeLayout
+            android:id="@+id/txtTagSoccer"
+            android:background="@drawable/tag_rectangle"
+            android:layout_alignLeft="@id/txtUsername"
+            android:layout_below="@id/txtUsername"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp">
+
+            <TextView
+                android:text="Soccer"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorPrimaryBrown"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/txtTagCoffee"
+            android:background="@drawable/tag_rectangle"
+            android:layout_toEndOf="@id/txtTagSoccer"
+            android:layout_marginStart="5dp"
+            android:layout_below="@id/txtUsername"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp">
+
+            <TextView
+                android:text="Coffee"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorPrimaryBrown"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="@drawable/tag_rectangle"
+            android:layout_toEndOf="@id/txtTagCoffee"
+            android:layout_marginStart="5dp"
+
+            android:layout_below="@id/txtUsername"
+            android:layout_marginTop="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp">
+
+            <TextView
+                android:text="Daily work"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorPrimaryBrown"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/chatMess"
+        android:padding="10dp"
+        android:layout_above="@id/chatBox"
+        android:layout_below="@+id/toolBar">
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/chatBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/btnMore"
+            android:layout_width="45dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_more" />
+
+        <RelativeLayout
+            android:id="@+id/txtMess"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingLeft="10dp"
+            android:layout_toLeftOf="@+id/btnSend"
+            android:layout_toRightOf="@id/btnMore"
+            android:background="@drawable/tag_rectangle">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"
+                android:autoLink="none"
+                android:background="@null"
+                android:textColorHint="@color/colorPrimaryBrown"
+                android:textCursorDrawable="@null"
+                android:textColorLink="@color/colorPrimaryBrown"
+                android:hint="Input message"
+                android:textColor="@color/colorPrimaryBrown"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+
+        </RelativeLayout>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/btnSend"
+            android:layout_width="45dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/ic_send" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

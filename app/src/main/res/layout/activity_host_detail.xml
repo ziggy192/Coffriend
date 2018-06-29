@@ -129,6 +129,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:id="@+id/btnChat"
+            android:onClick="goToChat"
             android:background="@drawable/tag_rectangle_chat"
             android:src="@drawable/ic_chat"/>
 
@@ -274,11 +276,12 @@
 
     <!--Direct Button-->
     <!--<android.support.design.widget.FloatingActionButton-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:src="@drawable/ic_direct"-->
-        <!--android:backgroundTint="@color/colorPrimaryBrown"-->
-        <!--android:background="@color/colorPrimaryBrown"-->
+    <!--android:id="@+id/btnDirection"-->
+    <!--app:backgroundTint="@color/colorPrimaryBrown"-->
         <!--android:layout_margin="10dp"-->
         <!--android:layout_alignParentEnd="true"-->
         <!--android:layout_alignParentBottom="true"/>-->

@@ -9,17 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EventsActivity">
+        <activity android:name=".EventsActivity" />
+        <activity android:name=".UserProfileActivity" />
+        <activity android:name=".AppBaseActivity" />
+        <activity android:name=".HostDetailActivity" />
+        <activity android:name=".HistoryDetailActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserProfileActivity" />
-        <activity android:name=".AppBaseActivity" />
-        <activity android:name=".HostDetailActivity" />
-        <activity android:name=".HistoryDetailActivity"></activity>
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

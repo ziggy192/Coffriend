@@ -8,4 +8,11 @@
     <color name="colorBlueHashtag">#03A9F4</color>
     <color name="colorTextPrimary">#DD000000</color>
     <color name="colorTextSecondary">#88000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#98999b</color>
+    <color name="twitter">#50abf1</color>
+    <color name="signup">#FF5353</color>
+    <color name="search">#FAFAFA</color>
+    <color name="next">#795548</color>
 </resources>

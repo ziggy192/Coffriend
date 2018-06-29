@@ -28,8 +28,8 @@ public class EventsActivity extends AppBaseActivity {
 
 //        Intent intent = new Intent(this, UserProfileActivity.class);
 //        startActivity(intent);
-        Intent intent = new Intent(this, HistoryDetailActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, HistoryDetailActivity.class);
+//        startActivity(intent);
     }
 
     public void gotoDetail(View view){

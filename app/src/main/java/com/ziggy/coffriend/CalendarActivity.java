@@ -1,8 +1,10 @@
 package com.ziggy.coffriend;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -38,5 +40,10 @@ public class CalendarActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void gotoFinish(View view) {
+        Intent intent = new Intent(this,FinishActivity.class);
+        startActivity(intent);
     }
 }

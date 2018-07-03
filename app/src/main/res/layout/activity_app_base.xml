@@ -41,5 +41,6 @@
         android:layout_height="wrap_content"
         app:backgroundTint="@color/colorPrimaryBrown"
         app:layout_anchor="@id/bar"
-        app:srcCompat="@drawable/ic_plus" />
+        app:srcCompat="@drawable/ic_plus"
+        android:onClick="gotoCreateHost"/>
 </android.support.design.widget.CoordinatorLayout>

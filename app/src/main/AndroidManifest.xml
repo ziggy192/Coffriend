@@ -22,7 +22,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".CalendarActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".CreateHostActivity"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".FinishActivity"></activity>
     </application>
 
 </manifest>

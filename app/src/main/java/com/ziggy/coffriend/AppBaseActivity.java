@@ -1,5 +1,6 @@
 package com.ziggy.coffriend;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -117,5 +118,10 @@ public class AppBaseActivity extends AppCompatActivity implements MenuItem.OnMen
 //            // and so on...
 //        }
         return false;
+    }
+
+    public void gotoCreateHost(View view){
+        Intent intent = new Intent(this,CreateHostActivity.class);
+        startActivity(intent);
     }
 }

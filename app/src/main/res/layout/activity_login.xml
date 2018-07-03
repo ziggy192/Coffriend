@@ -17,7 +17,7 @@
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/grey"
+            android:src="@drawable/grey"
             app:civ_border_color="@color/grey"
             app:civ_border_width="3dp" />
     </LinearLayout>
@@ -65,6 +65,28 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"></LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"></LinearLayout>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:text="SIGN UP NOW"
+                android:textColor="@color/white"
+                android:background="@drawable/button_signup_background"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"></LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -132,7 +154,7 @@
                 android:gravity="center"
                 android:paddingLeft="70dp"
                 android:drawablePadding="-90dp"
-                android:drawableLeft="@mipmap/facebook"
+                android:drawableLeft="@drawable/facebook"
                 android:background="@drawable/button_facebook_background"
                 android:text="LOGIN WITH FACEBOOK"
                 android:textColor="@color/white"
@@ -164,7 +186,7 @@
                 android:gravity="center"
                 android:paddingLeft="70dp"
                 android:drawablePadding="-90dp"
-                android:drawableLeft="@mipmap/twitter"
+                android:drawableLeft="@drawable/twitter"
                 android:background="@drawable/button_twitter_background"
                 android:text="LOGIN WITH TWITTER"
                 android:textColor="@color/white"/>
@@ -182,29 +204,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Don't Have Account?"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.8"
-            android:orientation="horizontal"
-            android:weightSum="10">
-            <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2.5"></LinearLayout>
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:text="SIGN UP NOW"
-                android:textColor="@color/white"
-                android:background="@drawable/button_signup_background"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.5"></LinearLayout>
+                android:text="Don't Have Account?"
+                android:textColor="@color/colorBlueHashtag"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

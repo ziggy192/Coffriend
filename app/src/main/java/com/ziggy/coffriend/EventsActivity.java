@@ -36,7 +36,7 @@ public class EventsActivity extends AppBaseActivity {
 //        startActivity(intent);
     }
 
-    public void gotoDetail(View view){
+    public void gotoHostDetail(View view){
         Intent intent = new Intent(EventsActivity.this, HostDetailActivity.class);
         startActivity(intent);
     }

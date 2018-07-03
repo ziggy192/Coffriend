@@ -39,39 +39,9 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_app_base);// The base layout that contains your navigation drawer.
         view_stub = findViewById(R.id.view_stub);
-//        appBar = findViewById(R.id.bar);
-//        bottomSheetDialogFragment = new MenuBottomSheetDialogFragment();
-//        bottomSheetLayout = findViewById(R.id.bottomSheet);
-//        sheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
-
-//        navigation_view = (NavigationView) findViewById(R.id.navigation_view);
-//        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, 0, 0);
-//        mDrawerLayout.setDrawerListener(mDrawerToggle);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-
-//        appBar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.d(TAG, "onClick: appbarclicked");
-////                sheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-//
-////                bottomSheetDialogFragment.show
-//                bottomSheetDialogFragment.showNow(getSupportFragmentManager(),bottomSheetDialogFragment.getTag());
-//            }
-//        });
 
 
-        //todo set menuitemclick event here
-//        drawerMenu = navigation_view.getMenu();
-//        for(int i = 0; i < drawerMenu.size(); i++) {
-//            drawerMenu.getItem(i).setOnMenuItemClickListener(this);
-//        }
-        // and so on...
+
         appBar = findViewById(R.id.bar);
         bottomSheetDialogFragment = new MenuBottomSheetDialogFragment();
         appBar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -85,6 +55,19 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
             }
         });
 
+        appBar.replaceMenu(R.menu.bottom_app_bar_menu);
+        appBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.nav_message:
+                        Intent intent = new Intent(AppBaseActivity.this, ChatListActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+                return false;
+            }
+        });
 
 
     }
@@ -92,6 +75,7 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+        navigateEventsFragment();
 //        mDrawerToggle.syncState();
     }
 
@@ -186,26 +170,46 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
 //        return false;
 //    }
 
+    public void gotoHostDetail(View view){
+        Intent intent = new Intent(this, HostDetailActivity.class);
+        startActivity(intent);
+    }
+
+    public void navigateEventsFragment() {
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.view_stub, EventsFragment.newInstance(null, null), "EventsFragment")
+                .commit();
+
+    }
+
+    public void navigateHistoryFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.view_stub, HistoryListFragment.newInstance(), "HistoryFragment")
+                .commit();
+
+    }
     @Override
     public void onBottomSheetMenuItemClicked(int position) {
         switch (position) {
             case 0:
                 //events
-                if (!(this instanceof EventsActivity)) {
-                    Intent intent = new Intent(this, EventsActivity.class);
-                    startActivity(intent);
-                }
+//                if (!(this instanceof EventsActivity)) {
+//                    Intent intent = new Intent(this, EventsActivity.class);
+//                    startActivity(intent);
+//                }
+                navigateEventsFragment();
                 break;
             case 1:
                 //followings
                 break;
             case 2:
                 //history
-                if (!(this instanceof HistoryListActivity)) {
-                    Intent intent = new Intent(this, HistoryListActivity.class);
-                    startActivity(intent);
-                }
-
+//                if (!(this instanceof HistoryListActivity)) {
+//                    Intent intent = new Intent(this, HistoryListActivity.class);
+//                    startActivity(intent);
+//                }
+                navigateHistoryFragment();
                 break;
             case 3:
                 //settings

@@ -5,7 +5,7 @@
     app:cardElevation="6dp"
     app:layout_goneMarginLeft="8dp"
     app:layout_goneMarginRight="8dp"
-    android:onClick="gotoDetail"
+    android:onClick="gotoHostDetail"
     android:clickable="true"
     android:focusable="true"
     app:contentPadding="8dp"

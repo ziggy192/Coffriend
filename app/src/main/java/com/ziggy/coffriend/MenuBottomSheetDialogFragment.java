@@ -31,7 +31,7 @@ public class MenuBottomSheetDialogFragment extends BottomSheetDialogFragment {
     private int selectedPosition = 0;
     private RecyclerView mRecyclerView;
 
-    CustomMenuHolder[] menuItemHolders = new CustomMenuHolder[]{
+    public static CustomMenuHolder[] menuItemHolders = new CustomMenuHolder[]{
             new CustomMenuHolder("Events", R.drawable.ic_coffee, R.id.nav_events,true)
             ,new CustomMenuHolder("Followings",R.drawable.ic_eye,R.id.nav_followings)
             ,new CustomMenuHolder("History",R.drawable.ic_history,R.id.nav_history)
@@ -187,7 +187,7 @@ public class MenuBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
     }
 
-    private class CustomMenuHolder {
+    private static class CustomMenuHolder {
 
 
         private String title;

@@ -213,4 +213,9 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
         }
         Log.d(TAG, "onBottomSheetMenuItemClicked: " + position);
     }
+
+    public void gotoCreateHost(View view){
+        Intent intent = new Intent(this,CreateHostActivity.class);
+        startActivity(intent);
+    }
 }

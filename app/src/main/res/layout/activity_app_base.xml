@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     tools:context=".AppBaseActivity">
 
-    <!--<android.support.v4.widget.NestedScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+    <android.support.v4.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="540dp">
 
         <FrameLayout
             android:id="@+id/view_stub"
@@ -18,7 +18,7 @@
             android:layout_height="match_parent">
 
         </FrameLayout>
-    <!--</android.support.v4.widget.NestedScrollView>-->
+    </android.support.v4.widget.NestedScrollView>
 
 
 
@@ -41,7 +41,8 @@
         android:layout_height="wrap_content"
         app:backgroundTint="@color/colorPrimaryBrown"
         app:layout_anchor="@id/bar"
-        app:srcCompat="@drawable/ic_plus" />
+        app:srcCompat="@drawable/ic_plus"
+        android:onClick="gotoCreateHost"/>
 
     <!--<include layout="@layout/bottom_sheet" />-->
 </android.support.design.widget.CoordinatorLayout>

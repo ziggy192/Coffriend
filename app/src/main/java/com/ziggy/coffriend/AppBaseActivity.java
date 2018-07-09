@@ -183,6 +183,13 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
 
     }
 
+    public void navigateSettings() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.view_stub, SettingsFragment.newInstance(), "SettingsFragment")
+                .commit();
+
+    }
+
     public void navigateHistoryFragment() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.view_stub, HistoryListFragment.newInstance(), "HistoryFragment")
@@ -209,6 +216,7 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
                 break;
             case 3:
                 //settings
+                navigateSettings();
                 break;
         }
         Log.d(TAG, "onBottomSheetMenuItemClicked: " + position);

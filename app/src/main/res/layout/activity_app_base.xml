@@ -7,18 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".AppBaseActivity">
 
-    <android.support.v4.widget.NestedScrollView
+    <!--<android.support.v4.widget.NestedScrollView-->
 
-        android:layout_width="match_parent"
-        android:layout_height="540dp">
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="540dp">-->
 
         <FrameLayout
             android:id="@+id/view_stub"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="540dp">
 
         </FrameLayout>
-    </android.support.v4.widget.NestedScrollView>
+    <!--</android.support.v4.widget.NestedScrollView>-->
 
 
 

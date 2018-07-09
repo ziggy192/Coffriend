@@ -1,5 +1,6 @@
 package com.ziggy.coffriend;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,7 +35,7 @@ public class HistoryDetailActivity extends AppCompatActivity {
     }
 
     public void clickFollow(View view) {
-        if (state){
+        if (state) {
             ((Button) this.findViewById(R.id.btnFollow)).setText("Follow");
         } else {
             ((Button) this.findViewById(R.id.btnFollow)).setText("Followed");
@@ -45,6 +46,11 @@ public class HistoryDetailActivity extends AppCompatActivity {
         finish();
     }
 
+    public void goToChat(View view) {
+        Intent intent = new Intent(this, ChatListActivity.class);
+        startActivity(intent);
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
 
@@ -53,6 +59,7 @@ public class HistoryDetailActivity extends AppCompatActivity {
 
         }
     }
+
     static class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         static final int ITEM_COUNT = 6;
@@ -68,7 +75,7 @@ public class HistoryDetailActivity extends AppCompatActivity {
         // Create new views (invoked by the layout manager)
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                       int viewType) {
+                                             int viewType) {
             // create a new view
             View v = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.item_history_detail_user_chat, parent, false);

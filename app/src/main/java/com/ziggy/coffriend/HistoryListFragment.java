@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class HistoryListFragment extends Fragment {
 
-    private static final String TAG = HistoryListActivity.class.toString();
+    private static final String TAG = HistoryListFragment.class.toString();
 
     FloatingSearchView searchView;
     HistoryListAdapter adapter;
@@ -97,7 +97,7 @@ public class HistoryListFragment extends Fragment {
                 for (int i = 0; i < allPossibleSearchResult.length; i++) {
                     if (allPossibleSearchResult[i].toLowerCase().contains(newQuery.toLowerCase())) {
 
-                        SearchSuggestion suggestion = new HistoryListActivity.MySearchSuggestion(allPossibleSearchResult[i]);
+                        SearchSuggestion suggestion = new MySearchSuggestion(allPossibleSearchResult[i]);
                         suggestionList.add(suggestion);
                     }
                 }

@@ -9,34 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
-        <activity android:name=".EventsActivity"/>
-	<activity android:name=".MainActivity">
-=======
-        <activity android:name=".EventsActivity">
-
-        </activity>
-        <activity android:name=".UserProfileActivity" />
-        <activity android:name=".AppBaseActivity"
-            android:launchMode="singleTop">
->>>>>>> Convert Actiivies to Fragments & add chat icon to BottomAppBar
+       
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".UserProfileActivity" />
+        <activity android:name=".AppBaseActivity"
+            android:launchMode="singleTop">
+
+        </activity>
         <activity android:name=".HostDetailActivity" />
         <activity
             android:name=".ChatListActivity"
             android:theme="@style/BackActionBar" />
-        <activity android:name=".ChatActivity"></activity>
-        <activity android:name=".HistoryDetailActivity"></activity>
-        <activity android:name=".HistoryListActivity" >
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.SEARCH" />-->
-            <!--</intent-filter>-->
-        </activity>
-	 <activity android:name=".CalendarActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".HistoryDetailActivity" />
+        <activity android:name=".CalendarActivity" />
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".CreateHostActivity"

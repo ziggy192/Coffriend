@@ -6,10 +6,19 @@
     android:paddingBottom="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/selectableItemBackground"
-    android:backgroundTint="#FFFFFF"
-    android:backgroundTintMode="src_atop"
+    android:background="@drawable/custom_ripple"
+    android:foregroundTint="@color/white"
+    android:foregroundTintMode="src_over"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white" />
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivUser"
         android:src="@drawable/profile"

@@ -193,11 +193,7 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
     public void onBottomSheetMenuItemClicked(int position) {
         switch (position) {
             case 0:
-                //events
-//                if (!(this instanceof EventsActivity)) {
-//                    Intent intent = new Intent(this, EventsActivity.class);
-//                    startActivity(intent);
-//                }
+
                 navigateEventsFragment();
                 break;
             case 1:

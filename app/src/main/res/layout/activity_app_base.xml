@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AppBaseActivity">
+    tools:context=".AppBaseActivity" >
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AppBaseActivity">
 
-    <!--<android.support.v4.widget.NestedScrollView-->
+        <!--<android.support.v4.widget.NestedScrollView-->
 
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="540dp">-->
@@ -18,31 +24,42 @@
             android:layout_height="540dp">
 
         </FrameLayout>
-    <!--</android.support.v4.widget.NestedScrollView>-->
+        <!--</android.support.v4.widget.NestedScrollView>-->
 
 
 
-    <android.support.design.bottomappbar.BottomAppBar
-        android:id="@+id/bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:elevation="20dp"
-        android:outlineProvider="bounds"
-        android:outlineSpotShadowColor="@color/colorTextPrimary"
+        <android.support.design.bottomappbar.BottomAppBar
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:elevation="20dp"
+            android:outlineProvider="bounds"
+            android:outlineSpotShadowColor="@color/colorTextPrimary"
 
-        app:fabAlignmentMode="center"
-        app:fabAttached="true"
-        app:navigationIcon="@drawable/ic_bars" />
+            app:fabAlignmentMode="center"
+            app:fabAttached="true"
+            app:navigationIcon="@drawable/ic_bars" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/colorPrimaryBrown"
+            app:layout_anchor="@id/bar"
+            app:srcCompat="@drawable/ic_plus"/>
+
+        <!--<include layout="@layout/bottom_sheet" />-->
+    </android.support.design.widget.CoordinatorLayout>
+    <TextView
+        android:id="@+id/tvMonthTitle"
+        android:text="July"
+        android:textSize="24sp"
+        android:visibility="gone"
+        android:layout_marginLeft="72dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:backgroundTint="@color/colorPrimaryBrown"
-        app:layout_anchor="@id/bar"
-        app:srcCompat="@drawable/ic_plus"
-        android:onClick="gotoCreateHost"/>
-
-    <!--<include layout="@layout/bottom_sheet" />-->
-</android.support.design.widget.CoordinatorLayout>
+        android:layout_height="wrap_content" />
+</android.support.constraint.ConstraintLayout>

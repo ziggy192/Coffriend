@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimaryBrown">#795548</color>
     <color name="colorLightBrown">#CFBCB6</color>
+    <color name="colorLightBrownAlpha">#33CFBCB6</color>
+
     <color name="colorBlueHashtag">#03A9F4</color>
     <color name="colorTextPrimary">#DD000000</color>
     <color name="colorTextSecondary">#88000000</color>

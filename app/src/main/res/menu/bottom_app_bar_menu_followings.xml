@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group>
+        <item
+            android:id="@+id/nav_dummy1"
+            android:enabled="false"
+            android:icon="@android:color/transparent"
+            android:title="Today"
+            app:showAsAction="always"
+
+            />
+        <item
+            android:id="@+id/nav_dummy2"
+            android:enabled="false"
+            android:icon="@android:color/transparent"
+            android:title="Today"
+            app:showAsAction="always"
+
+            />
+            <item
+                android:id="@+id/nav_dummy3"
+                android:enabled="false"
+                android:icon="@android:color/transparent"
+                android:title="Today"
+                app:showAsAction="always"
+
+                />
+        <item
+            android:id="@+id/nav_today"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_today_24px"
+            android:title="Today"
+            app:showAsAction="always"
+
+            />
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/ic_chat"
+            android:title="Messenger"
+            app:showAsAction="always"
+
+            />
+    </group>
+</menu>

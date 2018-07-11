@@ -47,7 +47,7 @@ public class HistoryDetailActivity extends AppCompatActivity {
     }
 
     public void goToChat(View view) {
-        Intent intent = new Intent(this, ChatListActivity.class);
+        Intent intent = new Intent(this, ChatActivity.class);
         startActivity(intent);
     }
 

@@ -10,14 +10,7 @@
             app:showAsAction="always"
 
             />
-        <item
-            android:id="@+id/nav_dummy2"
-            android:enabled="false"
-            android:icon="@android:color/transparent"
-            android:title="Today"
-            app:showAsAction="always"
 
-            />
             <item
                 android:id="@+id/nav_dummy3"
                 android:enabled="false"

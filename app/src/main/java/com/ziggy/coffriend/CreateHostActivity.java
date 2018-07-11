@@ -27,7 +27,6 @@ public class CreateHostActivity extends AppCompatActivity{
     private List<CoffeeShop> mListCoffee;
     private RecyclerView mRecycleViewCoffee;
     private CoffeeAdapter mAdapter;
-    private EditText mEditSearch;
     private ImageView mImg;
     private static final int HIDE_TAG = 0;
     @Override
@@ -39,15 +38,14 @@ public class CreateHostActivity extends AppCompatActivity{
     private void initialView(){
         mRecycleViewCoffee = findViewById(R.id.recycleView_coffee);
         mRecycleViewCoffee.setHasFixedSize(true);
-        mEditSearch = findViewById(R.id.edit_search);
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecycleViewCoffee.setLayoutManager(mLayoutManager);
         mListCoffee = new ArrayList<>();
         mListCoffee.add(new CoffeeShop(R.drawable.coffee,R.drawable.location1,"Coffee House","810 Xô Viết Nghệ Tĩnh, Quận 3,Tp. Hồ Chí Minh"));
-        mListCoffee.add(new CoffeeShop(R.drawable.coffee,R.drawable.location1,"Coffee House","910 Xô Viết Nghệ Tĩnh, Quận 3,Tp. Hồ Chí Minh"));
-        mListCoffee.add(new CoffeeShop(R.drawable.coffee,R.drawable.location1,"Coffee House","990 Xô Viết Nghệ Tĩnh, Quận 3,Tp. Hồ Chí Minh"));
-        mListCoffee.add(new CoffeeShop(R.drawable.coffee,R.drawable.location1,"Coffee House","150 Xô Viết Nghệ Tĩnh, Quận 3,Tp. Hồ Chí Minh"));
+        mListCoffee.add(new CoffeeShop(R.drawable.starbuck,R.drawable.location1,"Starbuck Coffee","110 Lê Văn Sỹ, Quận 12,Tp. Hồ Chí Minh"));
+        mListCoffee.add(new CoffeeShop(R.drawable.review_trung_nguyen,R.drawable.location1,"Trung Nguyen House","9 Trần Hưng Đạo, Phường 9, Quận 11,Tp. Hồ Chí Minh"));
+        mListCoffee.add(new CoffeeShop(R.drawable.coffee_house,R.drawable.location1,"The Coffee House","12 Vũ Văn Dũng, p 11, Quận 3,Tp. Hồ Chí Minh"));
         mListCoffee.add(new CoffeeShop(R.drawable.coffee,R.drawable.location1,"Coffee House","270 Xô Viết Nghệ Tĩnh, Quận 3,Tp. Hồ Chí Minh"));
         setAdapter(mListCoffee);
     };

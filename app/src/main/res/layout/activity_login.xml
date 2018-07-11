@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@color/white">
@@ -22,190 +23,95 @@
             app:civ_border_width="3dp" />
     </LinearLayout>
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
+        android:paddingBottom="16dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6.5"
         android:orientation="vertical"
-        android:weightSum="7">
-        <LinearLayout
+        android:paddingHorizontal="16dp"
+        >
+        <EditText
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:weightSum="10"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"></LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="9"
-                android:weightSum="2"
-                android:orientation="vertical">
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="Email Address"
-                    android:background="@drawable/edit_text_background"
-                    android:paddingLeft="15dp"
-                    />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="Password"
-                    android:background="@drawable/edit_text_background"
-                    android:paddingLeft="15dp"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"></LinearLayout>
-        </LinearLayout>
-        <LinearLayout
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:drawableLeft="@drawable/ic_envelope_regular"
+            android:hint="Email Address"
+            android:drawablePadding="16dp"
+            android:paddingLeft="16dp"
+            android:background="@drawable/edit_text_background"
+            />
+        <EditText
+            android:id="@+id/etPassword"
+            app:layout_constraintTop_toBottomOf="@id/etEmail"
+            android:drawableLeft="@drawable/ic_lock_solid"
+            android:drawablePadding="16dp"
+            android:paddingLeft="16dp"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.8"
-            android:orientation="horizontal"
-            android:weightSum="10">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.5"></LinearLayout>
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="5"
-                android:text="SIGN UP NOW"
-                android:textColor="@color/white"
-                android:background="@drawable/button_signup_background"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.5"></LinearLayout>
-        </LinearLayout>
-        <LinearLayout
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+
+            android:hint="Password"
+            android:background="@drawable/edit_text_background"
+            />
+        <Button
+            android:id="@+id/btnLogin"
+            app:layout_constraintTop_toBottomOf="@id/etPassword"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="10"
-            >
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="4.5"
-                android:gravity="center"
-                android:orientation="horizontal"
-                >
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"></LinearLayout>
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="4"
-                    android:background="@color/grey"
-                    />
-            </LinearLayout>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Or"
-                android:gravity="center"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="4.5"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:background="@color/grey"
-                    android:layout_weight="4"
-                    />
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"></LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="Login"
+            android:onClick="gotoHome"
+            android:textColor="@color/white"
+            android:background="@drawable/button_signup_background"/>
+        <View
+            android:layout_width="160dp"
+            android:layout_height="1dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnLoginFacebook"
+            app:layout_constraintTop_toBottomOf="@id/btnLogin"
+            android:background="@color/colorLine"
+            />
+        <Button
+            android:id="@+id/btnLoginFacebook"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.8"
-            android:orientation="horizontal"
-            android:weightSum="10">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"></LinearLayout>
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="9"
-                android:gravity="center"
-                android:paddingLeft="70dp"
-                android:drawablePadding="-90dp"
-                android:drawableLeft="@drawable/facebook"
-                android:background="@drawable/button_facebook_background"
-                android:text="LOGIN WITH FACEBOOK"
-                android:textColor="@color/white"
-                android:onClick="gotoHome"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"></LinearLayout>
-        </LinearLayout>
-        <LinearLayout
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/btnLoginGoogle"
+            android:background="@drawable/button_facebook_background"
+            android:text="Sign in with Facebook"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp"
+            android:onClick="gotoHome"/>
+        <Button
+            android:id="@+id/btnLoginGoogle"
+            app:layout_constraintBottom_toTopOf="@id/tvDontHaveAccount"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal"></LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.8"
-            android:orientation="horizontal"
-            android:weightSum="10">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"></LinearLayout>
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="9"
-                android:gravity="center"
-                android:paddingLeft="70dp"
-                android:drawablePadding="-90dp"
-                android:drawableLeft="@drawable/twitter"
-                android:background="@drawable/button_twitter_background"
-                android:text="LOGIN WITH TWITTER"
-                android:textColor="@color/white"/>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"></LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.8"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Don't Have Account?"
-                android:textColor="@color/colorBlueHashtag"/>
-        </LinearLayout>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/button_signup_background"
+            android:text="Sign in with Google"
+            android:layout_marginBottom="8dp"
+            android:textAllCaps="false"
+            android:onClick="gotoHome"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/tvDontHaveAccount"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't Have Account?"
+            android:textColor="@color/colorBlueHashtag"/>
+    </android.support.constraint.ConstraintLayout>
 </LinearLayout>

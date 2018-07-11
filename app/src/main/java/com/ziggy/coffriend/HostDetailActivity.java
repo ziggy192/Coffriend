@@ -32,7 +32,7 @@ public class HostDetailActivity extends AppCompatActivity {
     }
 
     public void goToChat(View view) {
-        Intent intent = new Intent(HostDetailActivity.this, ChatListActivity.class);
+        Intent intent = new Intent(HostDetailActivity.this, ChatActivity.class);
         startActivity(intent);
     }
 }

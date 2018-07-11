@@ -124,6 +124,11 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
     }
 
     @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+    }
+
+    @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 //        mDrawerToggle.onConfigurationChanged(newConfig);

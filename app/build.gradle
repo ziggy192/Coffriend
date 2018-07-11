@@ -32,4 +32,5 @@ dependencies {
     implementation 'com.github.arimorty:floatingsearchview:2.1.1'
     implementation 'com.github.sundeepk:compact-calendar-view:3.0.0'
     implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.shaishavgandhi:login-buttons:1.0.0'
 }

@@ -19,8 +19,10 @@
         <activity android:name=".UserProfileActivity" />
         <activity
             android:name=".AppBaseActivity"
-            android:launchMode="singleTop"></activity>
-        <activity android:name=".HostDetailActivity" />
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".HostDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".ChatListActivity"
             android:theme="@style/BackActionBar" />
@@ -32,6 +34,8 @@
             android:name=".CreateHostActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".FinishActivity" />
+        <activity android:name=".ReportActivity"
+            android:theme="@style/Theme.AppCompat.Light" ></activity>
     </application>
 
 </manifest>

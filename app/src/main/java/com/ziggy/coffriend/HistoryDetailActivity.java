@@ -35,11 +35,11 @@ public class HistoryDetailActivity extends AppCompatActivity {
     }
 
     public void clickFollow(View view) {
-        if (state) {
-            ((Button) this.findViewById(R.id.btnFollow)).setText("Follow");
-        } else {
-            ((Button) this.findViewById(R.id.btnFollow)).setText("Followed");
-        }
+//        if (state) {
+//            ((Button) this.findViewById(R.id.btnFollow)).setText("Follow");
+//        } else {
+//            ((Button) this.findViewById(R.id.btnFollow)).setText("Followed");
+//        }
     }
 
     public void clickBack(View view) {

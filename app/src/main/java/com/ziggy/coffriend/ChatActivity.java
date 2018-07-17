@@ -47,7 +47,7 @@ public class ChatActivity extends AppCompatActivity {
         layout.setLayoutParams(params);
 
         TextView tv = new TextView(this);
-        params.setMargins(0,0,0,0);
+        params.setMargins(0,10,0,10);
         params.addRule(RelativeLayout.ALIGN_PARENT_END);
         tv.setLayoutParams(params);
         tv.setBackgroundResource(R.drawable.chat_border_2);

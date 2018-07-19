@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.design.animation.AnimationUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,16 +22,20 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.arlib.floatingsearchview.FloatingSearchView;
 import com.ziggy.coffriend.R;
 import com.ziggy.coffriend.adapter.CoffeeAdapter;
 import com.ziggy.coffriend.model.CoffeeShop;
 
 public class CreateHostActivity extends AppCompatActivity{
+    private static final String TAG = CreateHostActivity.class.toString();
+
     private List<CoffeeShop> mListCoffee;
     private RecyclerView mRecycleViewCoffee;
     private CoffeeAdapter mAdapter;
     private ImageView mImg;
     private static final int HIDE_TAG = 0;
+    FloatingSearchView searhView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +43,12 @@ public class CreateHostActivity extends AppCompatActivity{
         initialView();
     }
     private void initialView(){
+        searhView = findViewById(R.id.floating_search_view);
+
         mRecycleViewCoffee = findViewById(R.id.recycleView_coffee);
         mRecycleViewCoffee.setHasFixedSize(true);
-
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
+
         mRecycleViewCoffee.setLayoutManager(mLayoutManager);
         mListCoffee = new ArrayList<>();
         mListCoffee.add(new CoffeeShop(R.drawable.coffee,R.drawable.location1,"Coffee House","810 Xô Viết Nghệ Tĩnh, Quận 3,Tp. Hồ Chí Minh"));

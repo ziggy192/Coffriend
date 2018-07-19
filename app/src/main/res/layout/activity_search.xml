@@ -23,7 +23,7 @@
             android:layout_height="0dp"
             android:layout_weight="7.5"
             android:paddingTop="72dp"
-            android:clipToPadding="true"
+            android:clipToPadding="false"
             android:id="@+id/recycleView_coffee"></android.support.v7.widget.RecyclerView>
 
         <!--<LinearLayout-->

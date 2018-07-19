@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import com.squareup.picasso.Picasso;
 import com.ziggy.coffriend.R;
 import com.ziggy.coffriend.model.CoffeeShop;
 
@@ -34,8 +35,9 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull final CoffeeAdapter.ViewHolder holder, final int position) {
-        holder.mImgBackground.setImageResource(mListCoffee.get(position).getBackgroundImg());
-        holder.mImgLocation.setImageResource(mListCoffee.get(position).getLocationImg());
+        Picasso.get().load(mListCoffee.get(position).getBackgroundImg()).into(holder.mImgBackground);
+//        holder.mImgBackground.setImageResource(mListCoffee.get(position).getBackgroundImg());
+//        holder.mImgLocation.setImageResource(mListCoffee.get(position).getLocationImg());
         holder.mTxtCoffeeName.setText(mListCoffee.get(position).getCoffeeName());
         holder.mTxtCoffeeAddress.setText(mListCoffee.get(position).getCoffeeAddress());
         holder.mlnlCoffeeRoot.setOnClickListener(new View.OnClickListener() {

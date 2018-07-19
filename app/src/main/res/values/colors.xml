@@ -6,6 +6,10 @@
     <color name="colorPrimaryBrown">#795548</color>
     <color name="colorLightBrown">#CFBCB6</color>
     <color name="colorLightBrownAlpha">#33CFBCB6</color>
+    <color name="colorCheck">#66ff66</color>
+    <color name="colorCheckGradient">#FF5cb85c</color>
+    <color name="colorUncheck">#ff9933</color>
+    <color name="colorUncheckGradient">#FFd9534f</color>
 
     <color name="colorBlueHashtag">#03A9F4</color>
     <color name="colorTextPrimary">#DD000000</color>

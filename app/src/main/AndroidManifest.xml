@@ -5,9 +5,9 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -36,7 +36,10 @@
             android:name=".CreateHostActivity"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".FinishActivity" />
-        <activity android:name=".ReportActivity"
+        <activity
+            android:name=".ReportActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".ChoiceInterestActivity"
             android:theme="@style/Theme.AppCompat.Light" ></activity>
     </application>
 

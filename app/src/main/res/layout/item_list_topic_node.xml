@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageTopic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:scaleType="fitXY"
+        android:layout_centerInParent="true"
+        android:cropToPadding="false"
+        android:tint="#6F000000"
+        android:src="@drawable/ai" />
+
+    <TextView
+        android:id="@+id/txtTopicNodeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Topic"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignEnd="@+id/imageTopic"
+        android:layout_alignTop="@+id/imageTopic"
+        android:layout_margin="5dp"
+        android:id="@+id/btnTopicCheck"
+        android:background="@drawable/bg_radius_white"
+        android:src="@drawable/ic_check_white" />
+
+</RelativeLayout>

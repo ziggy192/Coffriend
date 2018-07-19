@@ -109,7 +109,8 @@
             android:background="@drawable/button_next_background"
             android:onClick="gotoCalendar"
             android:text="Next"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:id="@+id/btnNext"/>
 
         <LinearLayout
             android:layout_width="0dp"

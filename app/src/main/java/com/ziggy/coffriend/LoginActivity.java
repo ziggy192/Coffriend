@@ -14,7 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void gotoHome(View view) {
-        Intent intent = new Intent(this,AppBaseActivity.class);
+        Intent intent = new Intent(this,ChoiceInterestActivity.class);
         startActivity(intent);
     }
 

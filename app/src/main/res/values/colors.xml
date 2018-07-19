@@ -8,6 +8,7 @@
     <color name="colorLightBrownAlpha">#33CFBCB6</color>
     <color name="colorCheck">#66ff66</color>
     <color name="colorCheckGradient">#FF5cb85c</color>
+    <color name="colorCheckTopic">#FF00b300</color>
     <color name="colorUncheck">#ff9933</color>
     <color name="colorUncheckGradient">#FFd9534f</color>
 

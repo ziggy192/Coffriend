@@ -2,7 +2,6 @@ package com.ziggy.coffriend;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -31,8 +30,8 @@ public class HistoryListFragment extends Fragment {
     private static final String TAG = HistoryListFragment.class.toString();
 
     FloatingSearchView searchView;
-    HistoryListAdapter adapter;
     RecyclerView recyclerView;
+    RecyclerView recyclerViewGoing;
     String[] allPossibleSearchResult = new String[]{
             "Eric Bachman",
             "Eric Bachman",
@@ -72,12 +71,19 @@ public class HistoryListFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.rvHistoryList);
-        adapter = new HistoryListAdapter();
-        recyclerView.setAdapter(adapter);
+        HistoryListAdapter adapterHostedList;
+        adapterHostedList = new HistoryListAdapter();
+        recyclerView.setAdapter(adapterHostedList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.HORIZONTAL));
 
 
+        HistoryListAdapter adapterGoingList;
+        adapterGoingList = new HistoryListAdapter();
+        recyclerViewGoing = view.findViewById(R.id.rvGoingList);
+        recyclerViewGoing.setAdapter(adapterGoingList);
+        recyclerViewGoing.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.HORIZONTAL));
 
         searchView = view.findViewById(R.id.floating_search_view);
         searchView.setOnBindSuggestionCallback(new SearchSuggestionsAdapter.OnBindSuggestionCallback() {
@@ -116,14 +122,14 @@ public class HistoryListFragment extends Fragment {
 
             @Override
             public void onSearchAction(String currentQuery) {
-                if (DUMMY_HOST_HISTORY_SEARCH_QUERY.toLowerCase().contains(currentQuery.toLowerCase())) {
-                    adapter.setListLength(HistoryListAdapter.MAX_LIST_LENGTH);
-                    Log.d(TAG, String.format("onSearchAction: Has  %d Results", HistoryListAdapter.MAX_LIST_LENGTH));
-                } else {
-                    adapter.setListLength(0);
-                    Log.d(TAG, "onSearchAction: Has  0 Results");
-
-                }
+//                if (DUMMY_HOST_HISTORY_SEARCH_QUERY.toLowerCase().contains(currentQuery.toLowerCase())) {
+//                    adapter.setListLength(HistoryListAdapter.MAX_LIST_LENGTH);
+//                    Log.d(TAG, String.format("onSearchAction: Has  %d Results", HistoryListAdapter.MAX_LIST_LENGTH));
+//                } else {
+//                    adapter.setListLength(0);
+//                    Log.d(TAG, "onSearchAction: Has  0 Results");
+//
+//                }
                 searchView.clearFocus();
                 Toast.makeText(getActivity(), String.format("search \"%s\"'", currentQuery), Toast.LENGTH_SHORT).show();
             }
@@ -154,8 +160,12 @@ public class HistoryListFragment extends Fragment {
 
     private class ViewHolder extends RecyclerView.ViewHolder {
 
+        private EventModel model;
+
+        ImageView imvFavorite;
         ViewHolder(LayoutInflater inflater, ViewGroup parent) {
-            super(inflater.inflate(R.layout.item_history_list, parent, false));
+            super(inflater.inflate(R.layout.item_eventbrite_small, parent, false));
+            imvFavorite = itemView.findViewById(R.id.btnFavorite);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -163,22 +173,71 @@ public class HistoryListFragment extends Fragment {
                     startActivity(intent);
                 }
             });
+            imvFavorite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d(TAG, String.format("onClick: imvFavorite, model=%s", model));
+                    if (model != null) {
+                        model.setFavorite(!model.isFavorite);
+                        inflatImvFavorite();
+                    }
+                }
+            });
+        }
+
+        private void inflatImvFavorite() {
+            if (model.isFavorite) {
+                imvFavorite.setImageResource(R.drawable.ic_menu_favorite);
+            } else {
+                imvFavorite.setImageResource(R.drawable.ic_menu_unfavorite);
+            }
+        }
+        public void bind(EventModel model) {
+            this.model = model;
+            inflatImvFavorite();
 
         }
 
 
 
 
+    }
 
+    private static class EventModel{
+        private boolean isFavorite;
+
+        public EventModel() {
+            isFavorite = false;
+        }
+
+        public boolean isFavorite() {
+            return isFavorite;
+        }
+
+        public void setFavorite(boolean favorite) {
+            isFavorite = favorite;
+        }
+
+        @Override
+        public String toString() {
+            return "EventModel{" +
+                    "isFavorite=" + isFavorite +
+                    '}';
+        }
     }
 
     private class HistoryListAdapter extends RecyclerView.Adapter<ViewHolder> {
 
-        private static final int MAX_LIST_LENGTH = 5;
+        private List<EventModel> modelList;
+        private static final int MAX_LIST_LENGTH = 2;
         private int listLength;
 
         public HistoryListAdapter() {
             listLength = MAX_LIST_LENGTH;
+            modelList = new ArrayList<>();
+            for (int i = 0; i < listLength; i++) {
+                modelList.add(new EventModel());
+            }
         }
 
         public int getListLength() {
@@ -198,13 +257,14 @@ public class HistoryListFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
             //we dont bind dummy data
+            viewHolder.bind(modelList.get(i));
         }
 
 
 
         @Override
         public int getItemCount() {
-            return listLength;
+            return modelList.size();
         }
 
     }

@@ -32,8 +32,8 @@ public class MenuBottomSheetDialogFragment extends BottomSheetDialogFragment {
     private RecyclerView mRecyclerView;
 
     public static CustomMenuHolder[] menuItemHolders = new CustomMenuHolder[]{
-            new CustomMenuHolder("Events", R.drawable.ic_coffee, R.id.nav_events,true)
-            ,new CustomMenuHolder("Followings",R.drawable.ic_eye,R.id.nav_followings)
+            new CustomMenuHolder("Home", R.drawable.ic_coffee, R.id.nav_events,true)
+            ,new CustomMenuHolder("Favorite",R.drawable.ic_heart_solid,R.id.nav_followings)
             ,new CustomMenuHolder("History",R.drawable.ic_history,R.id.nav_history)
             ,new CustomMenuHolder("Settings",R.drawable.ic_wrench,R.id.nav_settings)
     };

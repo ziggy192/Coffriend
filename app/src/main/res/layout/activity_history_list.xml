@@ -4,32 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="600dp"
-    android:background="@color/white"
     tools:context=".AppBaseActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvHistoryList"
-        android:layout_marginTop="72dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="68dp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="72dp"
+                android:text="Hosted list"
+                android:textSize="20sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvHistoryList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_marginHorizontal="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/colorLine" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginLeft="16dp"
+                android:text="Going list"
+                android:textSize="20sp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvGoingList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
 
     <com.arlib.floatingsearchview.FloatingSearchView
         android:id="@+id/floating_search_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:floatingSearch_searchBarMarginLeft="8dp"
-        app:floatingSearch_searchBarMarginTop="8dp"
-        app:floatingSearch_searchBarMarginRight="8dp"
-        app:floatingSearch_searchHint="Search..."
-        app:floatingSearch_suggestionsListAnimDuration="250"
-        app:floatingSearch_showSearchKey="false"
+        app:floatingSearch_close_search_on_keyboard_dismiss="true"
         app:floatingSearch_leftActionMode="showSearch"
         app:floatingSearch_menu="@menu/search_menu"
-        app:floatingSearch_close_search_on_keyboard_dismiss="true"/>
+        app:floatingSearch_searchBarMarginLeft="8dp"
+        app:floatingSearch_searchBarMarginRight="8dp"
+        app:floatingSearch_searchBarMarginTop="8dp"
+        app:floatingSearch_searchHint="Search..."
+        app:floatingSearch_showSearchKey="false"
+        app:floatingSearch_suggestionsListAnimDuration="250" />
 
 
 </android.support.constraint.ConstraintLayout>

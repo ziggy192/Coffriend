@@ -7,37 +7,35 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import com.ziggy.coffriend.R;
 import com.ziggy.coffriend.model.EventModel;
 
 import org.greenrobot.eventbus.EventBus;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+
 public class SmallEventsAdapter extends RecyclerView.Adapter<SmallEventsAdapter.SmallEventViewHolder> {
 
-    private static final int MAX_LIST_LENGTH = 2;
+
     private List<EventModel> modelList;
-    private int listLength;
+
 
     public SmallEventsAdapter() {
-        listLength = MAX_LIST_LENGTH;
         modelList = new ArrayList<>();
-        for (int i = 0; i < listLength; i++) {
-            modelList.add(new EventModel());
-        }
+        modelList.add(new EventModel());
+        modelList.add(new EventModel());
+
     }
 
-    public int getListLength() {
-        return listLength;
-    }
-
-    public void setListLength(int listLength) {
-        this.listLength = listLength;
-        this.notifyDataSetChanged();
-    }
 
     @Override
     public SmallEventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -64,10 +62,20 @@ public class SmallEventsAdapter extends RecyclerView.Adapter<SmallEventsAdapter.
         ImageView imvFavorite;
         private EventModel model;
 
+        @BindView(R.id.imvEvent)
+        ImageView imvEvent;
+        @BindView(R.id.tvEventName)
+        TextView tvEventName;
+        @BindView(R.id.tvLocation)
+        TextView tvLocation;
+        @BindView(R.id.tvTime)
+        TextView tvTime;
+
 
         SmallEventViewHolder(LayoutInflater inflater, ViewGroup parent) {
 
             super(inflater.inflate(R.layout.item_eventbrite_small, parent, false));
+            ButterKnife.bind(this, itemView);
             imvFavorite = itemView.findViewById(R.id.btnFavorite);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -90,9 +98,6 @@ public class SmallEventsAdapter extends RecyclerView.Adapter<SmallEventsAdapter.
             });
         }
 
-        private void setOnClickListener(View.OnClickListener listener) {
-            itemView.setOnClickListener(listener);
-        }
 
         private void inflatImvFavorite() {
             if (model.isFavorite()) {
@@ -106,6 +111,13 @@ public class SmallEventsAdapter extends RecyclerView.Adapter<SmallEventsAdapter.
             this.model = model;
             inflatImvFavorite();
 
+            tvEventName.setText(model.getTitle());
+            tvLocation.setText(model.getLocation());
+            tvTime.setText(model.getDateTime());
+            Picasso.get().load(model.getResourceId())
+                    .resize(104,104)
+                    .transform(new RoundedCornersTransformation(10,0))
+                    .into(imvEvent);
         }
 
 

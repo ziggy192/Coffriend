@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
@@ -55,6 +56,15 @@ public class HomeEventsAdapter extends RecyclerView.Adapter<HomeEventsAdapter.Vi
         @BindView(R.id.imvEvent)
         ImageView imvEvent;
 
+        @BindView(R.id.tvLocation)
+        TextView tvLocation;
+        @BindView(R.id.tvTime)
+        TextView tvTime;
+        @BindView(R.id.tvEventName)
+        TextView tvEventName;
+
+        @BindView(R.id.tvDateOfMonth)
+        TextView tvDateOfMonth;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
@@ -67,14 +77,19 @@ public class HomeEventsAdapter extends RecyclerView.Adapter<HomeEventsAdapter.Vi
             } else {
                 btnFavorite.setImageResource(R.drawable.ic_menu_unfavorite);
             }
-            MaskTransformation transformation = new MaskTransformation(itemView.getContext()
-                    ,R.drawable.transformation_rounded_corners);
+            tvEventName.setText(model.getTitle());
+            tvLocation.setText(model.getLocation());
+            tvTime.setText(model.getTime());
+            tvDateOfMonth.setText(model.getDateNumber());
+
             Picasso.get()
-                    .load(R.drawable.bg_ml)
+                    .load(model.getResourceId())
                     .centerCrop()
                     .resize(300,160)
                     .transform(new RoundedCornersTransformation(10,10))
                     .into(imvEvent);
+
+
 
         }
 

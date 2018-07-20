@@ -1,5 +1,6 @@
 package com.ziggy.coffriend;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.annotation.NonNull;
@@ -26,6 +27,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ziggy.coffriend.DB.DBUtils;
+
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
@@ -45,6 +48,7 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
     private ScrollController mScrollController;
 
 
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,7 +98,9 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
         floatingActionButton.setImageResource(R.drawable.ic_plus);
         setupAppbarUIOrigional();
 
-
+        if(!DBUtils.loadUsername(this).equals("vip")){
+            floatingActionButton.setVisibility(View.GONE);
+        }
     }
 
     public void setupAppbarUIOrigional() {

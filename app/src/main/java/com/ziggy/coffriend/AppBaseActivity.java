@@ -112,7 +112,7 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
     }
 
     public void setupAppbarUIFollowings() {
-        tvMonthTitle.setVisibility(View.VISIBLE);
+//        tvMonthTitle.setVisibility(View.VISIBLE);
         appBar.setFabAlignmentMode(BottomAppBar.FAB_ALIGNMENT_MODE_END);
         appBar.replaceMenu(R.menu.bottom_app_bar_menu_followings);
 

@@ -78,6 +78,10 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
                         Intent intent = new Intent(AppBaseActivity.this, ChatListActivity.class);
                         startActivity(intent);
                         break;
+                    case R.id.nav_search:
+                        Intent intent2 = new Intent(AppBaseActivity.this, SearchActivity.class);
+                        startActivity(intent2);
+                        break;
                     case R.id.nav_today:
                         //todo scroll to middle
                         mScrollController.scrollToToday();

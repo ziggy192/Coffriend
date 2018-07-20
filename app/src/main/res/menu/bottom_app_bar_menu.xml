@@ -2,6 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <group>
+
+        <item android:id="@+id/nav_search"
+            android:icon="@drawable/ic_search"
+            android:title="Search"
+            app:showAsAction="always"
+            />
+
         <item android:id="@+id/nav_message"
             android:icon="@drawable/ic_chat"
             android:title="Messenger"

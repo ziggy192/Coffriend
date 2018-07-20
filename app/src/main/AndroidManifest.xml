@@ -42,7 +42,10 @@
         <activity
             android:name=".ChoiceInterestActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity
+            android:name=".SearchActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".CreateHostTopicActivity"></activity>
     </application>
 
 </manifest>

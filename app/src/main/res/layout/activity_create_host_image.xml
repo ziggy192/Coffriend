@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -23,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="40dp"
                 android:paddingTop="40dp"
-                android:text="Write something"
+                android:text="Choice Image"
                 android:textColor="#fff"
                 android:textSize="25sp" />
         </LinearLayout>
@@ -78,17 +79,34 @@
                         android:elevation="11dp"
                         android:orientation="vertical">
 
-                        <EditText
+                        <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:gravity="top"
-                            android:hint="Introduce your meeting"
-                            android:inputType="textMultiLine"
-                            android:paddingLeft="15dp"
-                            android:paddingTop="10dp"
-                            android:textSize="16sp" />
+                            android:onClick="loadImage">
 
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/imageChoice"/>
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:src="@drawable/ic_upload"
+                                android:id="@+id/imageUpload"
+                                android:layout_centerInParent="true"
+                                android:scaleType="center"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_below="@+id/imageUpload"
+                                android:id="@+id/txtUpload"
+                                android:textAlignment="center"
+                                android:text="Upload Image" />
+
+                        </RelativeLayout>
 
                     </LinearLayout>
 
@@ -100,59 +118,19 @@
 
             </LinearLayout>
         </FrameLayout>
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_weight="3"-->
-            <!--android:background="@color/white"-->
-            <!--android:orientation="vertical"-->
-            <!--android:weightSum="3">-->
-
-            <!--<ImageView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="0dp"-->
-                <!--android:layout_weight="1.5"-->
-                <!--android:src="@drawable/progress3" />-->
-
-            <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="0dp"-->
-                <!--android:layout_weight="0.7"-->
-                <!--android:orientation="horizontal"-->
-                <!--android:weightSum="10">-->
-
-                <!--<LinearLayout-->
-                    <!--android:layout_width="0dp"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:layout_weight="3.5"></LinearLayout>-->
-
-                <!--<Button-->
-                    <!--android:layout_width="0dp"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:layout_weight="3"-->
-                    <!--android:background="@drawable/button_next_background"-->
-                    <!--android:onClick="gotoAppBase"-->
-                    <!--android:text="Finish"-->
-                    <!--android:textColor="@color/white"-->
-                    <!--android:textStyle="bold" />-->
-
-                <!--<LinearLayout-->
-                    <!--android:layout_width="0dp"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:layout_weight="3.5"></LinearLayout>-->
-            <!--</LinearLayout>-->
-        <!--</LinearLayout>-->
     </LinearLayout>
     <android.support.constraint.ConstraintLayout
         android:paddingBottom="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ImageView
-            app:layout_constraintBottom_toTopOf="@id/llBotButton"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:src="@drawable/progress3" />
+            android:layout_marginBottom="28dp"
+            android:src="@drawable/progress3"
+            app:layout_constraintBottom_toTopOf="@id/llBotButton"
+            tools:layout_editor_absoluteX="0dp" />
         <LinearLayout
             android:id="@+id/llBotButton"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -175,8 +153,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:background="@drawable/button_next_background"
-                android:onClick="gotoAppBase"
-                android:text="Finish"
+                android:onClick="gotoPlace"
+                android:text="NEXT"
                 android:textColor="@color/white" />
 
             <LinearLayout

@@ -66,7 +66,8 @@ public class CreateHostActivity extends AppCompatActivity{
             mAdapter.setOnItemClickListener(new CoffeeAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClickListener(int position) {
-                    Toast.makeText(CreateHostActivity.this,"You choose " + mListCoffee.get(position).getCoffeeAddress(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(CreateHostActivity.this, CalendarActivity.class);
+                    startActivity(intent);
                 }
             });
         } else{

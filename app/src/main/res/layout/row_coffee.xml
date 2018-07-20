@@ -53,13 +53,4 @@
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/text_view_coffee_name" />
     </android.support.constraint.ConstraintLayout>
-
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/btnTopicCheck"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/bg_radius_white_line_green"
-        android:src="@drawable/ic_check_white" />
 </FrameLayout>

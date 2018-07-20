@@ -45,7 +45,8 @@
         <activity
             android:name=".SearchActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".CreateHostTopicActivity"></activity>
+        <activity android:name=".CreateHostTopicActivity" />
+        <activity android:name=".CreateHostImageActivity"></activity>
     </application>
 
 </manifest>

@@ -271,7 +271,7 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
 
 
     public void gotoCreateHost(View view) {
-        Intent intent = new Intent(this, CreateHostActivity.class);
+        Intent intent = new Intent(this, CreateHostTopicActivity.class);
         startActivity(intent);
 
 

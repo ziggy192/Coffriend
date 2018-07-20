@@ -80,11 +80,14 @@
                 <!--android:id="@+id/img_test" />-->
         <!--</LinearLayout>-->
     </LinearLayout>
+
     <ImageView
-        app:layout_constraintBottom_toTopOf="@id/llBotButton"
         android:layout_width="match_parent"
         android:layout_height="76dp"
-        android:src="@drawable/progress1" />
+        android:layout_marginBottom="52dp"
+        android:src="@drawable/progress1"
+        app:layout_constraintBottom_toTopOf="@id/llBotButton"
+        tools:layout_editor_absoluteX="0dp" />
     <LinearLayout
         android:id="@+id/llBotButton"
         android:layout_marginBottom="16dp"
@@ -102,15 +105,15 @@
             android:layout_weight="3.5"
             android:background="#fff" />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:background="@drawable/button_next_background"
-            android:onClick="gotoCalendar"
-            android:text="Next"
-            android:textColor="@color/white"
-            android:id="@+id/btnNext"/>
+        <!--<Button-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="3"-->
+            <!--android:background="@drawable/button_next_background"-->
+            <!--android:onClick="gotoCalendar"-->
+            <!--android:text="Next"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:id="@+id/btnNext"/>-->
 
         <LinearLayout
             android:layout_width="0dp"
@@ -118,8 +121,8 @@
             android:layout_weight="3.5"
             android:background="#fff" />
     </LinearLayout>
+
     <com.arlib.floatingsearchview.FloatingSearchView
-        tools:visibility="invisible"
         android:id="@+id/floating_search_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -131,5 +134,8 @@
         app:floatingSearch_searchBarMarginTop="8dp"
         app:floatingSearch_searchHint="Search..."
         app:floatingSearch_showSearchKey="false"
-        app:floatingSearch_suggestionsListAnimDuration="250" />
+        app:floatingSearch_suggestionsListAnimDuration="250"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:visibility="invisible" />
 </android.support.constraint.ConstraintLayout>

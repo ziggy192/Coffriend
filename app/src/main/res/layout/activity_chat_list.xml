@@ -1,16 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".ChatListActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="Online"/>
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profile"
+                        android:id="@+id/imgOnlineProfile"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/imgOnlineProfile"
+                        android:textAlignment="center"
+                        android:id="@+id/txtOnlineTitle"
+                        android:text="Eric" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_alignBottom="@+id/imgOnlineProfile"
+                        android:layout_alignEnd="@+id/imgOnlineProfile"
+                        android:src="@color/colorCheckTopic"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profile"
+                        android:id="@+id/imgOnlineProfile"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/imgOnlineProfile"
+                        android:textAlignment="center"
+                        android:id="@+id/txtOnlineTitle"
+                        android:text="Eric" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_alignBottom="@+id/imgOnlineProfile"
+                        android:layout_alignEnd="@+id/imgOnlineProfile"
+                        android:src="@color/colorCheckTopic"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profile"
+                        android:id="@+id/imgOnlineProfile"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/imgOnlineProfile"
+                        android:textAlignment="center"
+                        android:id="@+id/txtOnlineTitle"
+                        android:text="Eric" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_alignBottom="@+id/imgOnlineProfile"
+                        android:layout_alignEnd="@+id/imgOnlineProfile"
+                        android:src="@color/colorCheckTopic"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profile"
+                        android:id="@+id/imgOnlineProfile"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/imgOnlineProfile"
+                        android:textAlignment="center"
+                        android:id="@+id/txtOnlineTitle"
+                        android:text="Eric" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_alignBottom="@+id/imgOnlineProfile"
+                        android:layout_alignEnd="@+id/imgOnlineProfile"
+                        android:src="@color/colorCheckTopic"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profile"
+                        android:id="@+id/imgOnlineProfile"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/imgOnlineProfile"
+                        android:textAlignment="center"
+                        android:id="@+id/txtOnlineTitle"
+                        android:text="Eric" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_alignBottom="@+id/imgOnlineProfile"
+                        android:layout_alignEnd="@+id/imgOnlineProfile"
+                        android:src="@color/colorCheckTopic"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profile"
+                        android:id="@+id/imgOnlineProfile"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/imgOnlineProfile"
+                        android:textAlignment="center"
+                        android:id="@+id/txtOnlineTitle"
+                        android:text="Eric" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_alignBottom="@+id/imgOnlineProfile"
+                        android:layout_alignEnd="@+id/imgOnlineProfile"
+                        android:src="@color/colorCheckTopic"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profile"
+                        android:id="@+id/imgOnlineProfile"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/imgOnlineProfile"
+                        android:textAlignment="center"
+                        android:id="@+id/txtOnlineTitle"
+                        android:text="Eric" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_alignBottom="@+id/imgOnlineProfile"
+                        android:layout_alignEnd="@+id/imgOnlineProfile"
+                        android:src="@color/colorCheckTopic"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="10dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/profile"
+                        android:id="@+id/imgOnlineProfile"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/imgOnlineProfile"
+                        android:textAlignment="center"
+                        android:id="@+id/txtOnlineTitle"
+                        android:text="Eric" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_alignBottom="@+id/imgOnlineProfile"
+                        android:layout_alignEnd="@+id/imgOnlineProfile"
+                        android:src="@color/colorCheckTopic"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lvChat"></ListView>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -27,7 +27,7 @@
             android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".ChatListActivity"
-            android:theme="@style/BackActionBar" />
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".HistoryDetailActivity" />
         <activity android:name=".CalendarActivity" />
@@ -39,8 +39,10 @@
         <activity
             android:name=".ReportActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".ChoiceInterestActivity"
-            android:theme="@style/Theme.AppCompat.Light" ></activity>
+        <activity
+            android:name=".ChoiceInterestActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>

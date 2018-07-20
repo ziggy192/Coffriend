@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.ziggy.coffriend.adapters.ChatListAdapter;
+import com.ziggy.coffriend.adapters.OnlineChatListAdapter;
 import com.ziggy.coffriend.holders.ChatSimpleHolder;
 
 import java.nio.file.Files;
@@ -59,6 +60,12 @@ public class ChatListActivity extends AppCompatActivity {
 
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
+
+        //------------------------------------------------------------------------------------------------
+//        OnlineChatListAdapter onlineAdapter = new OnlineChatListAdapter(list,this);
+//
+//        ListView online = findViewById(R.id.lvChatOnline);
+//        online.setAdapter(onlineAdapter);
     }
 
     @Override

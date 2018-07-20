@@ -7,6 +7,10 @@ public class EventModel {
         isFavorite = false;
     }
 
+    public EventModel(boolean isFavorite) {
+        this.isFavorite = isFavorite;
+    }
+
     public boolean isFavorite() {
         return isFavorite;
     }

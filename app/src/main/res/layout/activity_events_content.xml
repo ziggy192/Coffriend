@@ -15,35 +15,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include
-                android:id="@+id/cardEventHostStatus"
-                layout="@layout/card_eventbrite_home"
-
+            <TextView
+                android:text="Top events"
+                android:textSize="24sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvEvents"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginTop="72dp" />
-
-
-            <include
-                android:id="@+id/cardEventHostStatus2"
-                layout="@layout/card_eventbrite_home"
+                android:layout_marginTop="72dp"
+                android:nestedScrollingEnabled="false"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/cardEventHostStatus"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginVertical="16dp"/>
+                android:layout_height="wrap_content">
 
-            <include
-                layout="@layout/card_eventbrite_home"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            </android.support.v7.widget.RecyclerView>
+            <!--<include-->
+                <!--android:id="@+id/cardEventHostStatus"-->
+                <!--layout="@layout/card_eventbrite_home"-->
 
-                android:layout_below="@id/cardEventHostStatus2"
-                android:layout_margin="8dp" />
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--android:layout_marginBottom="16dp"-->
+                <!--android:layout_marginTop="72dp" />-->
+
+
+            <!--<include-->
+                <!--android:id="@+id/cardEventHostStatus2"-->
+                <!--layout="@layout/card_eventbrite_home"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/cardEventHostStatus"-->
+                <!--android:layout_marginLeft="8dp"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--android:layout_marginVertical="16dp"/>-->
+
+            <!--<include-->
+                <!--layout="@layout/card_eventbrite_home"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+
+                <!--android:layout_below="@id/cardEventHostStatus2"-->
+                <!--android:layout_margin="8dp" />-->
 
 
         </RelativeLayout>

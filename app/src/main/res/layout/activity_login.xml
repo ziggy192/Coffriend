@@ -35,6 +35,8 @@
             android:paddingBottom="8dp"
             android:hint="Email Address"
             android:textColor="@color/colorTextPrimary"
+            android:textColorHint="@color/colorTextSecondary"
+
             android:drawablePadding="16dp"
             android:layout_marginRight="54dp"
 
@@ -44,7 +46,6 @@
             android:id="@+id/etPassword"
             app:layout_constraintTop_toBottomOf="@id/etEmail"
             android:drawablePadding="16dp"
-            android:textColor="@color/colorTextPrimary"
             android:layout_marginLeft="54dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,6 +54,8 @@
             android:inputType="textPassword"
             android:hint="Password"
             android:layout_marginRight="54dp"
+            android:textColor="@color/colorTextPrimary"
+            android:textColorHint="@color/colorTextSecondary"
             />
         <ImageView
             app:layout_constraintRight_toLeftOf="@id/etPassword"

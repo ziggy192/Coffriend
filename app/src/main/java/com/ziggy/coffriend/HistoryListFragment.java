@@ -149,6 +149,7 @@ public class HistoryListFragment extends Fragment {
     @Subscribe
     public void onSmallEventClicked(SmallEventsAdapter.SmallEventClickedEvent event) {
         Intent intent = new Intent(getActivity(), HistoryDetailActivity.class);
+        intent.putExtra("isGoingButtonVisible", false);
         startActivity(intent);
     }
 

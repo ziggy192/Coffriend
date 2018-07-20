@@ -189,11 +189,6 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
 
 
     }
-    public void clickToFavorite(View view) {
-        FloatingActionButton fab = (FloatingActionButton) view;
-
-        fab.setImageResource(R.drawable.ic_menu_favorite);
-    }
     public void clickToShare(View view) {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");

@@ -15,17 +15,10 @@
         <item name="windowNoTitle">true</item>
 
     </style>
-    <style name="SearchView">
-        <!--<item name="floatingSearch_backgroundColor"></item>-->
-        <!--<item name="floatingSearch_viewSearchInputTextColor"></item>-->
-        <!--<item name="floatingSearch_viewSuggestionItemTextColor"></item>-->
-        <!--<item name="floatingSearch_hintTextColor"></item>-->
-        <!--<item name="floatingSearch_dividerColor"></item>-->
-        <!--<item name="floatingSearch_clearBtnColor"></item>-->
-        <!--<item name="floatingSearch_leftActionColor"></item>-->
-        <!--<item name="floatingSearch_menuItemIconColor"></item>-->
-        <!--<item name="floatingSearch_suggestionRightIconColor"></item>-->
-        <!--<item name="floatingSearch_actionMenuOverflowColor"></item>-->
+    <style name="App_EditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:colorPrimary">@android:color/holo_red_dark</item>
+        <item name="android:textColorHint">@android:color/holo_red_dark</item>
     </style>
     <style name="MySwitch" parent="Theme.AppCompat.Light">
         <!-- active thumb & track color (30% transparency) -->

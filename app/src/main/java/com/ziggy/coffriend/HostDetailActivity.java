@@ -20,8 +20,6 @@ public class HostDetailActivity extends AppCompatActivity {
     private boolean state = false;
     private boolean goState = false;
 
-    @TargetApi(Build.VERSION_CODES.M)
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,19 +29,21 @@ public class HostDetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         final ScrollView sv = findViewById(R.id.svMain);
-        sv.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(View view, int i, int i1, int i2, int i3) {
-                View last = sv.getChildAt(sv.getChildCount() - 1);
-                int diff = (last.getBottom() - (sv.getHeight() + sv.getScrollY())) -  last.getPaddingBottom();
-
-                if (diff <= 0) {
-                    findViewById(R.id.arrowDown).setVisibility(View.INVISIBLE);
-                } else {
-                    findViewById(R.id.arrowDown).setVisibility(View.VISIBLE);
-                }
-            }
-        });
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            sv.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+//                @Override
+//                public void onScrollChange(View view, int i, int i1, int i2, int i3) {
+//                    View last = sv.getChildAt(sv.getChildCount() - 1);
+//                    int diff = (last.getBottom() - (sv.getHeight() + sv.getScrollY())) -  last.getPaddingBottom();
+//
+//                    if (diff <= 0) {
+//                        findViewById(R.id.arrowDown).setVisibility(View.INVISIBLE);
+//                    } else {
+//                        findViewById(R.id.arrowDown).setVisibility(View.VISIBLE);
+//                    }
+//                }
+//            });
+//        }
     }
 
     public void clickBack(View view) {

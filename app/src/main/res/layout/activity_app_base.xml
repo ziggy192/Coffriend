@@ -53,7 +53,7 @@
     </android.support.design.widget.CoordinatorLayout>
     <TextView
         android:id="@+id/tvMonthTitle"
-        android:text="July"
+        android:text="Favorites"
         android:textSize="24sp"
         android:visibility="gone"
         android:layout_marginLeft="72dp"

@@ -116,7 +116,7 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
     }
 
     public void setupAppbarUIFollowings() {
-        tvMonthTitle.setVisibility(View.VISIBLE);
+//        tvMonthTitle.setVisibility(View.VISIBLE);
         appBar.setFabAlignmentMode(BottomAppBar.FAB_ALIGNMENT_MODE_END);
         appBar.replaceMenu(R.menu.bottom_app_bar_menu_followings);
 
@@ -204,7 +204,17 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
 
 
     }
+    public void clickToFavorite(View view) {
+        FloatingActionButton fab = (FloatingActionButton) view;
 
+        fab.setImageResource(R.drawable.ic_menu_favorite);
+    }
+    public void clickToShare(View view) {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra("Temp","Temp");
+        startActivity(Intent.createChooser(shareIntent, "Share to"));
+    }
 
     public void navigateFragement(Fragment fragment, String tag) {
         Fragment mFragment = getSupportFragmentManager().findFragmentByTag(tag);

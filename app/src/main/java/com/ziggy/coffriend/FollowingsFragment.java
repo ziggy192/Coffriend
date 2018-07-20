@@ -64,22 +64,22 @@ public class FollowingsFragment extends Fragment implements AppBaseActivity.Scro
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                int position = ((LinearLayoutManager) recyclerView.getLayoutManager())
-                        .findFirstCompletelyVisibleItemPosition();
-                if (position == -1) {
-                    return;
-                }
-                FollowingModel model = new FollowingModel(position);
-                Log.d(TAG, String.format("onScrolled: firstVisiblePosition=%d, currentMonth=%d,newMonth=%d"
-                        , position, currentMonth, model.calendar.get(Calendar.MONTH)));
-
-                if (model.calendar.get(Calendar.MONTH) != currentMonth) {
-                    currentMonth = model.calendar.get(Calendar.MONTH);
-                    SimpleDateFormat dateFormat = new SimpleDateFormat();
-                    dateFormat.applyPattern("MMMM");
-                    String month = dateFormat.format(model.calendar.getTime());
-                    EventBus.getDefault().post(new AppBaseActivity.MonthChangedEvent(month));
-                }
+//                int position = ((LinearLayoutManager) recyclerView.getLayoutManager())
+//                        .findFirstCompletelyVisibleItemPosition();
+//                if (position == -1) {
+//                    return;
+//                }
+//                FollowingModel model = new FollowingModel(position);
+//                Log.d(TAG, String.format("onScrolled: firstVisiblePosition=%d, currentMonth=%d,newMonth=%d"
+//                        , position, currentMonth, model.calendar.get(Calendar.MONTH)));
+//
+//                if (model.calendar.get(Calendar.MONTH) != currentMonth) {
+//                    currentMonth = model.calendar.get(Calendar.MONTH);
+//                    SimpleDateFormat dateFormat = new SimpleDateFormat();
+//                    dateFormat.applyPattern("MMMM");
+//                    String month = dateFormat.format(model.calendar.getTime());
+//                    EventBus.getDefault().post(new AppBaseActivity.MonthChangedEvent(month));
+//                }
 
             }
         });
@@ -104,12 +104,12 @@ public class FollowingsFragment extends Fragment implements AppBaseActivity.Scro
 
         public void bind(FollowingModel model) {
             SimpleDateFormat dateFormat = new SimpleDateFormat();
-            dateFormat.applyPattern("EEE");
-            String day = dateFormat.format(model.calendar.getTime());
-            tvDay.setText(day);
-            Log.d(TAG, "bind: Day = " + day);
+//            dateFormat.applyPattern("EEE");
+//            String day = dateFormat.format(model.calendar.getTime());
+//            tvDay.setText(day);
+//            Log.d(TAG, "bind: Day = " + day);
 
-            dateFormat.applyPattern("dd");
+            dateFormat.applyPattern("EE, MMM dd");
             String date = dateFormat.format(model.calendar.getTime());
             tvDate.setText(date);
             Log.d(TAG, "bind: Date = " + date);
@@ -118,8 +118,8 @@ public class FollowingsFragment extends Fragment implements AppBaseActivity.Scro
 
     public static class FollowingsAdapter extends RecyclerView.Adapter<ViewHolder> {
 
-        private static final int MAX_LIST_LENGTH = 100;
-        public static final int TODAY_POSITION_IN_LIST =   50;
+        private static final int MAX_LIST_LENGTH = 5;
+        public static final int TODAY_POSITION_IN_LIST =   0;
 
 
 

@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="600dp"
+    android:layout_height="match_parent"
     tools:context=".AppBaseActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp">
+        android:layout_marginTop="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="72dp"
                 android:text="Hosted list"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvHistoryList"
@@ -46,7 +46,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginLeft="16dp"
                 android:text="Going list"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvGoingList"
@@ -66,19 +66,19 @@
     </ScrollView>
 
 
-    <com.arlib.floatingsearchview.FloatingSearchView
-        android:id="@+id/floating_search_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:floatingSearch_close_search_on_keyboard_dismiss="true"
-        app:floatingSearch_leftActionMode="showSearch"
-        app:floatingSearch_menu="@menu/search_menu"
-        app:floatingSearch_searchBarMarginLeft="8dp"
-        app:floatingSearch_searchBarMarginRight="8dp"
-        app:floatingSearch_searchBarMarginTop="8dp"
-        app:floatingSearch_searchHint="Search..."
-        app:floatingSearch_showSearchKey="false"
-        app:floatingSearch_suggestionsListAnimDuration="250" />
+    <!--<com.arlib.floatingsearchview.FloatingSearchView-->
+        <!--android:id="@+id/floating_search_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:floatingSearch_close_search_on_keyboard_dismiss="true"-->
+        <!--app:floatingSearch_leftActionMode="showSearch"-->
+        <!--app:floatingSearch_menu="@menu/search_menu"-->
+        <!--app:floatingSearch_searchBarMarginLeft="8dp"-->
+        <!--app:floatingSearch_searchBarMarginRight="8dp"-->
+        <!--app:floatingSearch_searchBarMarginTop="8dp"-->
+        <!--app:floatingSearch_searchHint="Search..."-->
+        <!--app:floatingSearch_showSearchKey="false"-->
+        <!--app:floatingSearch_suggestionsListAnimDuration="250" />-->
 
 
 </android.support.constraint.ConstraintLayout>

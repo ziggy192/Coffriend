@@ -25,34 +25,49 @@
         android:orientation="vertical"
         android:paddingHorizontal="16dp"
         >
+
         <EditText
+            android:layout_marginLeft="54dp"
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:drawableLeft="@drawable/ic_envelope_regular"
             android:hint="Email Address"
+            android:textColor="@color/colorTextPrimary"
             android:drawablePadding="16dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="@android:color/transparent"
+            android:layout_marginRight="54dp"
+
             />
+
         <EditText
             android:id="@+id/etPassword"
             app:layout_constraintTop_toBottomOf="@id/etEmail"
-            android:drawableLeft="@drawable/ic_lock_solid"
             android:drawablePadding="16dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="@android:color/transparent"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_marginLeft="54dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:inputType="textPassword"
             android:hint="Password"
+            android:layout_marginRight="54dp"
             />
+        <ImageView
+            app:layout_constraintRight_toLeftOf="@id/etPassword"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/etPassword"
+            android:src="@drawable/ic_lock_solid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            app:layout_constraintRight_toLeftOf="@id/etEmail"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/etEmail"
+            android:src="@drawable/ic_envelope_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <Button
             android:id="@+id/btnLogin"
             app:layout_constraintTop_toBottomOf="@id/etPassword"
@@ -77,14 +92,10 @@
         <com.shaishavgandhi.loginbuttons.FacebookButton
             android:id="@+id/btnLoginFacebook"
             app:layout_constraintBottom_toTopOf="@id/btnLoginGoogle"
-            android:text="    Sign in with Facebook"
+            android:text="Sign in with Facebook"
             app:iconSize="30dp"
             app:roundedCorner="true"
             app:roundedCornerRadius="10dp"
-            app:iconCenterAligned="false"
-            app:iconPadding="0dp"
-            android:textAlignment="textStart"
-
             android:layout_marginBottom="16dp"
             android:onClick="gotoHome"
             android:textColor="@color/white"
@@ -105,13 +116,10 @@
             <!--android:onClick="gotoHome"/>-->
         <com.shaishavgandhi.loginbuttons.GoogleButton
             android:id="@+id/btnLoginGoogle"
-            android:text="    Sign in with Google"
+            android:text="Sign in with Google"
             app:iconSize="30dp"
             app:roundedCorner="true"
             app:roundedCornerRadius="10dp"
-            app:iconCenterAligned="false"
-            app:iconPadding="0dp"
-            android:textAlignment="textStart"
             app:layout_constraintBottom_toTopOf="@id/tvDontHaveAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

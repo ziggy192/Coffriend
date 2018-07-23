@@ -13,9 +13,11 @@ import android.widget.TimePicker;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.ziggy.coffriend.DB.DBUtils;
 import com.ziggy.coffriend.R;
 
 public class CalendarActivity extends AppCompatActivity {
@@ -28,6 +30,8 @@ public class CalendarActivity extends AppCompatActivity {
     private int currentStartMinute;
     private int currentEndHour;
     private int currentEndMinute;
+    private Date currentDate = new Date();
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,6 +42,9 @@ public class CalendarActivity extends AppCompatActivity {
         currentEndHour = currentStartHour+1;
         currentStartMinute = Calendar.getInstance().get(Calendar.MINUTE);
         currentEndMinute = 0;
+        tvStartTime.setText(formatHour(currentStartHour,currentStartMinute));
+        tvEndTime.setText(formatHour(currentEndHour,currentEndMinute));
+
     }
 
     private void initialView() {
@@ -51,6 +58,7 @@ public class CalendarActivity extends AppCompatActivity {
             public void onDayClick(Date dateClicked) {
                 String[] words = (dateClicked.toString()).split(" ", 6);
                 mTextViewDate.setText(words[0] + " " + words[1] + " " + words[2]);
+                currentDate = dateClicked;
             }
 
             @Override
@@ -61,6 +69,9 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     public void gotoFinish(View view) {
+        DBUtils.saveKey(this, "date", sdf.format(currentDate));
+        DBUtils.saveKey(this, "start",formatHour(currentStartHour, currentStartMinute));
+        DBUtils.saveKey(this, "end",formatHour(currentEndHour, currentEndMinute));
         Intent intent = new Intent(this,FinishActivity.class);
         startActivity(intent);
     }

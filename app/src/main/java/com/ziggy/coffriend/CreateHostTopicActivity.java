@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.ziggy.coffriend.DB.DBUtils;
 import com.ziggy.coffriend.adapters.TopicAdapter;
 import com.ziggy.coffriend.adapters.TopicNodeAdapter;
 import com.ziggy.coffriend.holders.TopicHolder;
@@ -21,6 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreateHostTopicActivity extends AppCompatActivity {
+
+    private List<TopicNodeHolder> listArt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,7 @@ public class CreateHostTopicActivity extends AppCompatActivity {
     private void init(){
         List<TopicHolder> list = new ArrayList<>();
 
-        List<TopicNodeHolder> listArt = new ArrayList<>();
+        listArt = new ArrayList<>();
         listArt.add(new TopicNodeHolder(R.drawable.ai, "Artificial Intelligence"));
         listArt.add(new TopicNodeHolder(R.drawable.art, "Art"));
         listArt.add(new TopicNodeHolder(R.drawable.data_science, "Data Science"));
@@ -71,6 +75,17 @@ public class CreateHostTopicActivity extends AppCompatActivity {
     }
 
     public void gotoPlace(View view) {
+        StringBuilder s = new StringBuilder();
+
+        for (int i = 0; i < listArt.size(); i++){
+            TopicNodeHolder holder = listArt.get(i);
+            if(holder.isCheck()){
+                s.append(holder.getTitle() + ";");
+            }
+        }
+
+        DBUtils.saveKey(this, "interest", s.toString());
+
         Intent intent = new Intent(CreateHostTopicActivity.this, CreateHostImageActivity.class);
         startActivity(intent);
     }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -40,6 +41,7 @@ public class HistoryDetailActivity extends AppCompatActivity {
         mAdapter = new MyAdapter();
         mRecyclerView.setAdapter(mAdapter);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         boolean isGoingButtonVisible = getIntent().getBooleanExtra("isGoingButtonVisible", true);
         if (isGoingButtonVisible) {
             btnGo.setVisibility(View.VISIBLE);
@@ -49,6 +51,14 @@ public class HistoryDetailActivity extends AppCompatActivity {
             arrowDown.setVisibility(View.GONE);
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home){
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void clickFollow(View view) {

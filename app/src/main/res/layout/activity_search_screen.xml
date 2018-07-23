@@ -54,6 +54,7 @@
                     android:background="@drawable/text_underline_dotted"
                     android:text="Anytime"
                     android:onClick="showTimeDialog"
+                    android:id="@+id/txtDate"
                     android:textSize="25dp" />
 
             </LinearLayout>
@@ -73,34 +74,11 @@
                     android:layout_below="@id/edtSearch"
                     android:text="In" />
 
-                <TextView
+                <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/text_underline_dotted"
-                    android:text="District 12, Ho Chi Minh City"
-                    android:textSize="25dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/edtSearch"
-                android:layout_alignParentEnd="true"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="I'm up for" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:background="@drawable/text_underline_dotted"
-                    android:text="Anything"
-                    android:onClick="showTopicDialog"
+                    android:hint="District 12, Ho Chi Minh City"
                     android:textSize="25dp" />
 
             </LinearLayout>
@@ -112,6 +90,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@color/colorPrimaryBrown"
                 android:textColor="@color/white"
+                android:onClick="showResult"
                 android:layout_below="@id/lblPlace"
                 android:layout_alignParentEnd="true"/>
 
@@ -119,5 +98,10 @@
 
     </android.support.v7.widget.CardView>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvEvents"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

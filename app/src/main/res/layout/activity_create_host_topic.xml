@@ -106,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginBottom="28dp"
-            android:src="@drawable/progress3"
+            android:src="@drawable/progess_1"
             app:layout_constraintBottom_toTopOf="@id/llBotButton"
             tools:layout_editor_absoluteX="0dp" />
         <LinearLayout

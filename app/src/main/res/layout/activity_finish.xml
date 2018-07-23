@@ -169,7 +169,7 @@
             app:layout_constraintBottom_toTopOf="@id/llBotButton"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:src="@drawable/progress3" />
+            android:src="@drawable/progess_5" />
         <LinearLayout
             android:id="@+id/llBotButton"
             app:layout_constraintBottom_toBottomOf="parent"

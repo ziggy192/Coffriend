@@ -81,9 +81,12 @@ public class EventsFragment extends Fragment {
         ButterKnife.bind(this, view);
         List<EventModel> eventModels = new ArrayList<>();
         eventModels.add(new EventModel(false));
-        eventModels.add(new EventModel(false));
-        eventModels.add(new EventModel(false));
-        eventModels.add(new EventModel(false));
+        EventModel eventmodel2 = new EventModel(R.drawable.blockchain,"BlockChain discussion","6:00 PM","Jun, Aug 5","5","Passio Coffee Q5",false);
+        eventModels.add(eventmodel2);
+        EventModel eventmodel3 = new EventModel(R.drawable.bitcoin,"BitCoin discussion","3:00 PM","Jun, Aug 8","8","The Coffe House",false);
+        eventModels.add(eventmodel3);
+        EventModel eventmodel4 = new EventModel(R.drawable.harryporter,"Harry Porter discussion","9:00 PM","Jun, Aug 10","10","Lala Restaurent",false);
+        eventModels.add(eventmodel4);
 
         HomeEventsAdapter adapter = new HomeEventsAdapter(eventModels);
         rvEvents.setAdapter(adapter);

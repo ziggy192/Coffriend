@@ -32,6 +32,7 @@ public class HistoryDetailActivity extends AppCompatActivity {
         mAdapter = new MyAdapter();
         mRecyclerView.setAdapter(mAdapter);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void clickFollow(View view) {

@@ -32,6 +32,7 @@
                 android:text="Find friend for Machine Learning discussion"
                 android:textSize="20dp"
                 android:textColor="#000000"
+                android:id="@+id/title_detail"
                 android:layout_below="@id/imgDetail"/>
 
             <TextView
@@ -41,6 +42,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="15dp"
+                android:id="@+id/title_content"
                 android:text="I have learned ML in 3 month and I want to find friends to talk about Linear Regression algorithm disadvantage and train OCTAVE."/>
 
             <View
@@ -93,10 +95,12 @@
                         android:text="Friday, 25/05/2018"
                         android:textColor="@color/colorTextSecondary"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:id="@+id/title_date"/>
 
                     <TextView
                         android:text="08:00AM - 11-00AM"
+                        android:id="@+id/title_time"
                         android:textColor="#AAAAAA"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -125,13 +129,15 @@
                         android:text="The Coffee House"
                         android:textColor="@color/colorTextSecondary"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:id="@+id/title_name_address"/>
 
                     <TextView
                         android:text="123 Quang Trung Q.Go Vap, Ho Chi Minh City"
                         android:textColor="#AAAAAA"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:id="@+id/title_address" />
 
                 </LinearLayout>
 
@@ -222,31 +228,5 @@
         </LinearLayout>
 
     </ScrollView>
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="10dp">
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:id="@+id/btnGo"
-            android:textColor="@color/white"
-            android:onClick="clickGoing"
-            android:text="you'll go"
-            android:layout_below="@+id/arrowDown"
-            android:background="@drawable/button_going_background"/>
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/arrowDown"
-            android:src="@android:drawable/arrow_down_float"/>
-
-    </RelativeLayout>
 
 </RelativeLayout>

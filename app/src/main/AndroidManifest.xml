@@ -29,7 +29,9 @@
             android:name=".ChatListActivity"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".ChatActivity" />
-        <activity android:name=".HistoryDetailActivity" />
+        <activity
+            android:name=".HistoryDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".LoginActivity" />
         <activity
@@ -46,7 +48,9 @@
             android:name=".SearchActivity"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".CreateHostTopicActivity" />
-        <activity android:name=".CreateHostImageActivity"></activity>
+        <activity android:name=".CreateHostImageActivity" />
+        <activity android:name=".EditHostActivity"
+            android:theme="@style/Theme.AppCompat.Light" ></activity>
     </application>
 
 </manifest>

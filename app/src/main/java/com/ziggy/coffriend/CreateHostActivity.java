@@ -23,6 +23,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import com.arlib.floatingsearchview.FloatingSearchView;
+import com.ziggy.coffriend.DB.DBUtils;
 import com.ziggy.coffriend.R;
 import com.ziggy.coffriend.adapter.CoffeeAdapter;
 import com.ziggy.coffriend.model.CoffeeShop;
@@ -66,6 +67,9 @@ public class CreateHostActivity extends AppCompatActivity{
             mAdapter.setOnItemClickListener(new CoffeeAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClickListener(int position) {
+                    DBUtils.saveKey(CreateHostActivity.this, "name_address", mListCoffee.get(position).getCoffeeName());
+                    DBUtils.saveKey(CreateHostActivity.this, "address", mListCoffee.get(position).getCoffeeAddress());
+
                     Intent intent = new Intent(CreateHostActivity.this, CalendarActivity.class);
                     startActivity(intent);
                 }

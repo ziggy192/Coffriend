@@ -74,19 +74,36 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="4.4"
-                        android:background="@color/white"
                         android:elevation="11dp"
                         android:orientation="vertical">
 
                         <EditText
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lines="2"
+                            android:background="@color/white"
+                            android:textColor="@color/colorPrimaryBrown"
+                            android:hint="Title"
+                            android:textColorHint="@color/colorPrimaryBrown"
+                            android:paddingLeft="15dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:textSize="16dp"
+                            android:id="@+id/txt_title"
+                            android:layout_marginBottom="10dp"/>
+
+                        <EditText
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
                             android:gravity="top"
+                            android:background="@color/white"
+                            android:textColor="@color/colorPrimaryBrown"
                             android:hint="Introduce your meeting"
+                            android:textColorHint="@color/colorPrimaryBrown"
                             android:inputType="textMultiLine"
                             android:paddingLeft="15dp"
                             android:paddingTop="10dp"
+                            android:id="@+id/txt_content"
                             android:textSize="16sp" />
 
 

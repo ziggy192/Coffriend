@@ -5,31 +5,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.arlib.floatingsearchview.FloatingSearchView;
-import com.arlib.floatingsearchview.suggestions.SearchSuggestionsAdapter;
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
+import com.ziggy.coffriend.adapters.SmallEventsAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 public class HistoryListFragment extends Fragment {
 
     private static final String TAG = HistoryListFragment.class.toString();
 
-    FloatingSearchView searchView;
+//    FloatingSearchView searchView;
     RecyclerView recyclerView;
     RecyclerView recyclerViewGoing;
     String[] allPossibleSearchResult = new String[]{
@@ -71,69 +66,91 @@ public class HistoryListFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.rvHistoryList);
-        HistoryListAdapter adapterHostedList;
-        adapterHostedList = new HistoryListAdapter();
+        SmallEventsAdapter adapterHostedList;
+        adapterHostedList = new SmallEventsAdapter();
         recyclerView.setAdapter(adapterHostedList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.HORIZONTAL));
 
 
-        HistoryListAdapter adapterGoingList;
-        adapterGoingList = new HistoryListAdapter();
+        SmallEventsAdapter adapterGoingList;
+        adapterGoingList = new SmallEventsAdapter();
         recyclerViewGoing = view.findViewById(R.id.rvGoingList);
         recyclerViewGoing.setAdapter(adapterGoingList);
         recyclerViewGoing.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.HORIZONTAL));
 
-        searchView = view.findViewById(R.id.floating_search_view);
-        searchView.setOnBindSuggestionCallback(new SearchSuggestionsAdapter.OnBindSuggestionCallback() {
-            @Override
-            public void onBindSuggestion(View suggestionView, ImageView leftIcon, TextView textView, SearchSuggestion item, int itemPosition) {
-                leftIcon.setImageResource(R.drawable.ic_clock);
-                leftIcon.invalidate();
-            }
-        });
-
-        searchView.setOnQueryChangeListener(new FloatingSearchView.OnQueryChangeListener() {
-            @Override
-            public void onSearchTextChanged(String oldQuery, String newQuery) {
-                //get suggestions based on newQuery
-                List<SearchSuggestion> suggestionList = new ArrayList<>();
-
-                for (int i = 0; i < allPossibleSearchResult.length; i++) {
-                    if (allPossibleSearchResult[i].toLowerCase().contains(newQuery.toLowerCase())) {
-
-                        SearchSuggestion suggestion = new MySearchSuggestion(allPossibleSearchResult[i]);
-                        suggestionList.add(suggestion);
-                    }
-                }
-                //pass them on to the search view
-                searchView.swapSuggestions(suggestionList);
-            }
-        });
-
-        searchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
-            @Override
-            public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
-                String query = searchSuggestion.getBody();
-                searchView.setSearchText(query);
-                onSearchAction(query);
-            }
-
-            @Override
-            public void onSearchAction(String currentQuery) {
-//                if (DUMMY_HOST_HISTORY_SEARCH_QUERY.toLowerCase().contains(currentQuery.toLowerCase())) {
-//                    adapter.setListLength(HistoryListAdapter.MAX_LIST_LENGTH);
-//                    Log.d(TAG, String.format("onSearchAction: Has  %d Results", HistoryListAdapter.MAX_LIST_LENGTH));
-//                } else {
-//                    adapter.setListLength(0);
-//                    Log.d(TAG, "onSearchAction: Has  0 Results");
 //
+//        searchView = view.findViewById(R.id.floating_search_view);
+//        searchView.setOnBindSuggestionCallback(new SearchSuggestionsAdapter.OnBindSuggestionCallback() {
+//            @Override
+//            public void onBindSuggestion(View suggestionView, ImageView leftIcon, TextView textView, SearchSuggestion item, int itemPosition) {
+//                leftIcon.setImageResource(R.drawable.ic_clock);
+//                leftIcon.invalidate();
+//            }
+//        });
+//
+//        searchView.setOnQueryChangeListener(new FloatingSearchView.OnQueryChangeListener() {
+//            @Override
+//            public void onSearchTextChanged(String oldQuery, String newQuery) {
+//                //get suggestions based on newQuery
+//                List<SearchSuggestion> suggestionList = new ArrayList<>();
+//
+//                for (int i = 0; i < allPossibleSearchResult.length; i++) {
+//                    if (allPossibleSearchResult[i].toLowerCase().contains(newQuery.toLowerCase())) {
+//
+//                        SearchSuggestion suggestion = new MySearchSuggestion(allPossibleSearchResult[i]);
+//                        suggestionList.add(suggestion);
+//                    }
 //                }
-                searchView.clearFocus();
-                Toast.makeText(getActivity(), String.format("search \"%s\"'", currentQuery), Toast.LENGTH_SHORT).show();
-            }
-        });
+//                //pass them on to the search view
+//                searchView.swapSuggestions(suggestionList);
+//            }
+//        });
+//
+//        searchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
+//            @Override
+//            public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
+//                String query = searchSuggestion.getBody();
+//                searchView.setSearchText(query);
+//                onSearchAction(query);
+//            }
+//
+//            @Override
+//            public void onSearchAction(String currentQuery) {
+////                if (DUMMY_HOST_HISTORY_SEARCH_QUERY.toLowerCase().contains(currentQuery.toLowerCase())) {
+////                    adapter.setListLength(SmallEventsAdapter.MAX_LIST_LENGTH);
+////                    Log.d(TAG, String.format("onSearchAction: Has  %d Results", SmallEventsAdapter.MAX_LIST_LENGTH));
+////                } else {
+////                    adapter.setListLength(0);
+////                    Log.d(TAG, "onSearchAction: Has  0 Results");
+////
+////                }
+//                searchView.clearFocus();
+//                Toast.makeText(getActivity(), String.format("search \"%s\"'", currentQuery), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe
+    public void onSmallEventClicked(SmallEventsAdapter.SmallEventClickedEvent event) {
+        Intent intent = new Intent(getActivity(), HistoryDetailActivity.class);
+        intent.putExtra("isGoingButtonVisible", false);
+        startActivity(intent);
     }
 
 
@@ -158,116 +175,9 @@ public class HistoryListFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
 
-    private class ViewHolder extends RecyclerView.ViewHolder {
-
-        private EventModel model;
-
-        ImageView imvFavorite;
-        ViewHolder(LayoutInflater inflater, ViewGroup parent) {
-            super(inflater.inflate(R.layout.item_eventbrite_small, parent, false));
-            imvFavorite = itemView.findViewById(R.id.btnFavorite);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getActivity(), HistoryDetailActivity.class);
-                    startActivity(intent);
-                }
-            });
-            imvFavorite.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.d(TAG, String.format("onClick: imvFavorite, model=%s", model));
-                    if (model != null) {
-                        model.setFavorite(!model.isFavorite);
-                        inflatImvFavorite();
-                    }
-                }
-            });
-        }
-
-        private void inflatImvFavorite() {
-            if (model.isFavorite) {
-                imvFavorite.setImageResource(R.drawable.ic_menu_favorite);
-            } else {
-                imvFavorite.setImageResource(R.drawable.ic_menu_unfavorite);
-            }
-        }
-        public void bind(EventModel model) {
-            this.model = model;
-            inflatImvFavorite();
-
-        }
 
 
 
-
-    }
-
-    private static class EventModel{
-        private boolean isFavorite;
-
-        public EventModel() {
-            isFavorite = false;
-        }
-
-        public boolean isFavorite() {
-            return isFavorite;
-        }
-
-        public void setFavorite(boolean favorite) {
-            isFavorite = favorite;
-        }
-
-        @Override
-        public String toString() {
-            return "EventModel{" +
-                    "isFavorite=" + isFavorite +
-                    '}';
-        }
-    }
-
-    private class HistoryListAdapter extends RecyclerView.Adapter<ViewHolder> {
-
-        private List<EventModel> modelList;
-        private static final int MAX_LIST_LENGTH = 2;
-        private int listLength;
-
-        public HistoryListAdapter() {
-            listLength = MAX_LIST_LENGTH;
-            modelList = new ArrayList<>();
-            for (int i = 0; i < listLength; i++) {
-                modelList.add(new EventModel());
-            }
-        }
-
-        public int getListLength() {
-            return listLength;
-        }
-
-        public void setListLength(int listLength) {
-            this.listLength = listLength;
-            this.notifyDataSetChanged();
-        }
-
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return new ViewHolder(LayoutInflater.from(parent.getContext()), parent);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-            //we dont bind dummy data
-            viewHolder.bind(modelList.get(i));
-        }
-
-
-
-        @Override
-        public int getItemCount() {
-            return modelList.size();
-        }
-
-    }
 
     private class CustomMenuHolder {
 
@@ -320,6 +230,8 @@ public class HistoryListFragment extends Fragment {
         public void setSelected(boolean selected) {
             isSelected = selected;
         }
+
+
     }
 
 

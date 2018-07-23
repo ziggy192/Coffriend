@@ -96,8 +96,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="top"
+<<<<<<< HEAD
                             android:background="@color/white"
                             android:textColor="@color/colorPrimaryBrown"
+=======
+                            android:textColor="@color/colorTextPrimary"
+                            android:textColorHint="@color/colorTextSecondary"
+>>>>>>> 2797896ed4988c13b7dcb99f4c9d108ce7389c39
                             android:hint="Introduce your meeting"
                             android:textColorHint="@color/colorPrimaryBrown"
                             android:inputType="textMultiLine"

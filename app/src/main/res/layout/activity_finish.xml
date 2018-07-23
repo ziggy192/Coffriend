@@ -83,6 +83,8 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:gravity="top"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textColorHint="@color/colorTextSecondary"
                             android:hint="Introduce your meeting"
                             android:inputType="textMultiLine"
                             android:paddingLeft="15dp"

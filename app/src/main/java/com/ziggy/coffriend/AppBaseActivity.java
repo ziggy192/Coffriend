@@ -45,7 +45,6 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
     private FrameLayout view_stub; //This is the framelayout to keep your content view
     private FloatingActionButton floatingActionButton;
 
-    private ScrollController mScrollController;
 
 
     @SuppressLint("RestrictedApi")
@@ -82,11 +81,6 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
                         Intent intent2 = new Intent(AppBaseActivity.this, SearchActivity.class);
                         startActivity(intent2);
                         break;
-                    case R.id.nav_today:
-                        //todo scroll to middle
-                        mScrollController.scrollToToday();
-                        break;
-
                 }
                 return false;
             }
@@ -115,15 +109,6 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
 
     }
 
-    public void setupAppbarUIFollowings() {
-//        tvMonthTitle.setVisibility(View.VISIBLE);
-        appBar.setFabAlignmentMode(BottomAppBar.FAB_ALIGNMENT_MODE_END);
-        appBar.replaceMenu(R.menu.bottom_app_bar_menu_followings);
-
-//        floatingActionButton.setImageResource(R.drawable.ic_baseline_today_24px);
-//        floatingActionButton.setOnClickListener(null);
-
-    }
 
 
     @Override
@@ -204,11 +189,6 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
 
 
     }
-    public void clickToFavorite(View view) {
-        FloatingActionButton fab = (FloatingActionButton) view;
-
-        fab.setImageResource(R.drawable.ic_menu_favorite);
-    }
     public void clickToShare(View view) {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
@@ -238,13 +218,10 @@ public class AppBaseActivity extends AppCompatActivity implements MenuBottomShee
                 break;
             case 1:
                 //followings
-                setupAppbarUIFollowings();
+                setupAppbarUIOrigional();
                 Fragment fragment = getSupportFragmentManager().findFragmentByTag("FollowingsFragment");
                 if (fragment == null) {
                     fragment = new FollowingsFragment();
-                }
-                if (fragment instanceof ScrollController) {
-                    mScrollController = (ScrollController) fragment;
                 }
                 navigateFragement(fragment, "FollowingsFragment");
                 break;

@@ -10,7 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class HistoryDetailActivity extends AppCompatActivity {
 
@@ -19,11 +23,15 @@ public class HistoryDetailActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private boolean state;
 
+    @BindView(R.id.btnGo)
+    Button btnGo;
+    @BindView(R.id.arrowDown)
+    ImageView arrowDown;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_detail);
-
+        ButterKnife.bind(this);
         mRecyclerView = findViewById(R.id.rvUserList);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
@@ -31,6 +39,15 @@ public class HistoryDetailActivity extends AppCompatActivity {
 
         mAdapter = new MyAdapter();
         mRecyclerView.setAdapter(mAdapter);
+
+        boolean isGoingButtonVisible = getIntent().getBooleanExtra("isGoingButtonVisible", true);
+        if (isGoingButtonVisible) {
+            btnGo.setVisibility(View.VISIBLE);
+            arrowDown.setVisibility(View.VISIBLE);
+        } else {
+            btnGo.setVisibility(View.GONE);
+            arrowDown.setVisibility(View.GONE);
+        }
 
     }
 

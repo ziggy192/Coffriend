@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -23,15 +24,15 @@ public class HistoryDetailActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private boolean state;
 
-//    @BindView(R.id.btnGo)
+    @BindView(R.id.btnGo)
     Button btnGo;
-//    @BindView(R.id.arrowDown)
+    @BindView(R.id.arrowDown)
     ImageView arrowDown;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_detail);
-//        ButterKnife.bind(this);
+        ButterKnife.bind(this);
         mRecyclerView = findViewById(R.id.rvUserList);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
@@ -50,6 +51,14 @@ public class HistoryDetailActivity extends AppCompatActivity {
             arrowDown.setVisibility(View.GONE);
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home){
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void clickFollow(View view) {

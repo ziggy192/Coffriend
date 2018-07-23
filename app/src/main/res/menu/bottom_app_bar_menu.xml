@@ -8,11 +8,5 @@
             android:title="Search"
             app:showAsAction="always"
             />
-
-        <item android:id="@+id/nav_message"
-            android:icon="@drawable/ic_chat"
-            android:title="Messenger"
-            app:showAsAction="always"
-            />
     </group>
 </menu>

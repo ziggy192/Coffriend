@@ -97,10 +97,10 @@ public class HostDetailActivity extends AppCompatActivity {
     public void clickGoing(View view) {
         Button btnGo = ((Button) findViewById(R.id.btnGo));
         if(!goState){
-            btnGo.setText("Cancle Your Check");
+            btnGo.setText("Cancel");
             btnGo.setBackgroundResource(R.drawable.button_cancle_going_background);
         } else {
-            btnGo.setText("you'll going");
+            btnGo.setText("going");
             btnGo.setBackgroundResource(R.drawable.button_going_background);
         }
 
@@ -108,7 +108,7 @@ public class HostDetailActivity extends AppCompatActivity {
     }
 
     public void goToProfile(View view) {
-        Intent intent = new Intent(HostDetailActivity.this, UserProfileActivity.class);
+        Intent intent = new Intent(HostDetailActivity.this, HosterProfileActivity.class);
         startActivity(intent);
     }
 }

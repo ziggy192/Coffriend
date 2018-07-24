@@ -17,6 +17,7 @@ public class UserProfileActivity extends AppCompatActivity {
         if(!DBUtils.loadUsername(this).equals("vip")){
             ((LinearLayout) findViewById(R.id.llStatics)).setVisibility(View.GONE);
         }
+
     }
 
 

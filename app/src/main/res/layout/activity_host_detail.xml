@@ -219,6 +219,26 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="30dp"/>
 
+            <TextView
+                android:id="@+id/tvComment"
+                android:text="Comments"
+                android:textSize="18dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_marginBottom="8dp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvComments"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/view_dummy"
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
         </LinearLayout>
 
     </ScrollView>

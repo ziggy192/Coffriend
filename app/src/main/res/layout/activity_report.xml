@@ -6,32 +6,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
+    android:background="@color/white"
     tools:context=".ReportActivity">
 
-    <LinearLayout
+
+    <TextView
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+
+        android:text="Rate this event"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="20dp">
-        
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:text="EMAIL"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/edtEmail"
-            android:hint="Your email address"/>
-        
-    </LinearLayout>
-
+        android:layout_gravity="center_horizontal"
+        app:mrb_progressTint="@color/colorPrimaryBrown"
+        app:mrb_indeterminateTintMode="src_in"
+        android:numStars="5"
+        android:layout_marginBottom="16dp"
+        android:stepSize="1.0" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:layout_marginBottom="20dp">
 
         <TextView
@@ -41,7 +44,7 @@
             android:textColor="#000000"
             android:textStyle="bold"
             android:id="@+id/lblReport"
-            android:text="REPORT TO"/>
+            android:text="Feedback to "/>
 
         <Spinner
             android:id="@+id/spinnerReport"
@@ -60,6 +63,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -91,29 +95,30 @@
             android:layout_height="wrap_content"
             android:textColor="#000000"
             android:textStyle="bold"
-            android:text="MESSAGE"/>
+            android:text="Comment"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/edtMessage"
-            android:hint="Anything else to tell us?"/>
+            android:maxLines="3"
+            android:hint="How do you feel about this event ? "/>
 
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:paddingLeft="72dp"
+        android:paddingRight="72dp"
         android:layout_height="wrap_content">
-
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="REPORT"
-            android:background="@color/colorPrimaryBrown"
+            android:background="@drawable/transformation_rounded_corners"
+            android:layout_centerHorizontal="true"
+            android:text="Submit"
+            android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:padding="10dp"
             android:onClick="clickReport"/>
 
     </RelativeLayout>

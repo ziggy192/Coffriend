@@ -28,6 +28,12 @@ public class HistoryDetailActivity extends AppCompatActivity {
     Button btnGo;
     @BindView(R.id.arrowDown)
     ImageView arrowDown;
+    @BindView(R.id.rvComments)
+    RecyclerView rvComments;
+    @BindView(R.id.tvComment)
+    TextView tvComment;
+    @BindView(R.id.view_dummy)
+    View viewDummy;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +56,10 @@ public class HistoryDetailActivity extends AppCompatActivity {
             btnGo.setVisibility(View.GONE);
             arrowDown.setVisibility(View.GONE);
         }
-
+        //show no comment in history details
+        tvComment.setVisibility(View.GONE);
+        rvComments.setVisibility(View.GONE);
+        viewDummy.setVisibility(View.GONE);
     }
 
     @Override

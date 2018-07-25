@@ -52,10 +52,21 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/text_underline_dotted"
-                    android:text="Anytime"
+                    android:text="From"
                     android:onClick="showTimeDialog"
                     android:id="@+id/txtDate"
                     android:textSize="25dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/text_underline_dotted"
+                    android:text="To"
+                    android:onClick="showTimeToDialog"
+                    android:id="@+id/txtDateTo"
+                    android:textSize="25dp" />
+
 
             </LinearLayout>
 

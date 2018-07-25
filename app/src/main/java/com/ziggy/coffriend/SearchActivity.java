@@ -62,6 +62,19 @@ public class SearchActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    public void showTimeToDialog(View view) {
+        DatePickerDialog.OnDateSetListener callback=new DatePickerDialog.OnDateSetListener(){
+            public void onDateSet(DatePicker view, int year,
+                                  int monthOfYear,
+                                  int dayOfMonth) {
+                ((TextView) findViewById(R.id.txtDateTo)).setText(dayOfMonth + "/" + monthOfYear + "/" + year);
+            }
+        };
+        Calendar calendar = Calendar.getInstance();
+        DatePickerDialog dialog = new DatePickerDialog(SearchActivity.this, callback, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) - 1, calendar.get(Calendar.DAY_OF_MONTH));
+        dialog.show();
+    }
+
     public void findLocation(View view) {
     }
 

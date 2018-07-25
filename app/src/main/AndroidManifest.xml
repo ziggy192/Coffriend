@@ -52,7 +52,8 @@
         <activity
             android:name=".EditHostActivity"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".HosterProfileActivity"></activity>
+        <activity android:name=".HosterProfileActivity" />
+        <activity android:name=".ChoiceLocationActivity"></activity>
     </application>
 
 </manifest>

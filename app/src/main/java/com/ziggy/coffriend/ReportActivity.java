@@ -19,7 +19,7 @@ public class ReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
-        getSupportActionBar().setTitle("Report");
+        getSupportActionBar().setTitle("Feedback");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Spinner reportType = findViewById(R.id.spinnerReport);

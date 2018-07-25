@@ -50,10 +50,9 @@ public class HostDetailActivity extends AppCompatActivity {
 
         final ScrollView sv = findViewById(R.id.svMain);
         ArrayList<CommentModel> commentModels = new ArrayList<>();
-        commentModels.add(new CommentModel(R.drawable.user, "phong nguyen", "22/2/2018", 4, "Mình mong một event như này lâu lắm rồi. Làm tốt lắm !"));
-        commentModels.add(new CommentModel(R.drawable.user, "phong nguyen", "22/2/2018", 4, "Mình mong một event như này lâu lắm rồi. Làm tốt lắm !"));
-        commentModels.add(new CommentModel(R.drawable.user, "phong nguyen", "22/2/2018", 4, "Mình mong một event như này lâu lắm rồi. Làm tốt lắm !"));
-        commentModels.add(new CommentModel(R.drawable.user, "phong nguyen", "22/2/2018", 4, "Mình mong một event như này lâu lắm rồi. Làm tốt lắm !"));
+        commentModels.add(new CommentModel(R.drawable.einstain, "Albert Einstain", "22/2/2018", 4, "Mình mong một event như này lâu lắm rồi. Làm tốt lắm !"));
+        commentModels.add(new CommentModel(R.drawable.user2, "Phong Long", "23/2/2018", 5, " Mình nhất định sẽ đến !"));
+        commentModels.add(new CommentModel(R.drawable.profile_360x360, "Người chuộc tội", "23/2/2018", 3, "Cũng hay đấy, đi thử cho biết nào !"));
 
         rvComments.setAdapter(new CommentAdatper(commentModels));
         rvComments.setLayoutManager(new LinearLayoutManager(this));
@@ -128,7 +127,7 @@ public class HostDetailActivity extends AppCompatActivity {
             btnGo.setText("Cancel");
             btnGo.setBackgroundResource(R.drawable.button_cancle_going_background);
         } else {
-            btnGo.setText("going");
+            btnGo.setText("I am going");
             btnGo.setBackgroundResource(R.drawable.button_going_background);
         }
 

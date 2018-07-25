@@ -257,7 +257,7 @@
             android:id="@+id/btnGo"
             android:textColor="@color/white"
             android:onClick="clickGoing"
-            android:text="going"
+            android:text="I am going"
             android:layout_below="@+id/arrowDown"
             android:background="@drawable/button_going_background"/>
 
